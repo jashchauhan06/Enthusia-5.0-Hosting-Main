@@ -1,0 +1,2 @@
+Idx: 371524
+ighlighted:!0,socials:{linkedin:"https://www.linkedin.com/in/soumya-mehar-458115320/"}},{id:7,name:"Jash Chauhan",role:"Web Development Team Lead",category:"webdev",image:"/images/team/Jash.webp",description:"Leading the web development team with expertise in modern technologies.",isHighlighted:!1,s

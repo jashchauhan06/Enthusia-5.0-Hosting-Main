@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Crawl-delay: 10
+Clean-param: utm_source&utm_medium&utm_campaign
+
+Sitemap: https://www.stavrossymeonidis.dev/sitemap.xml

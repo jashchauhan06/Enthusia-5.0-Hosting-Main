@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="dev-favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+  <link rel="dns-prefetch" href="https://fonts.cdnfonts.com" />
+  <link rel="preconnect" href="https://www.transparenttextures.com" />
+  <link rel="preconnect" href="https://videos.pexels.com" />
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="images/card_bg.png" as="image" />
+  <link rel="preload" href="images/mask.png" as="image" />
+  <link rel="preload" href="images/money_heist_bg.png" as="image" />
+
+  <!-- Font imports with display swap for better performance -->
+  <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link href="https://fonts.cdnfonts.com/css/azonix" rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <title>CODE SPRINT 2.0</title>
+  <script type="module" crossorigin src="/codesprint-app/assets/index-dPBHTkwF.js"></script>
+  <link rel="modulepreload" crossorigin href="/codesprint-app/assets/react-vendor-C9qCC5ZX.js">
+  <link rel="modulepreload" crossorigin href="/codesprint-app/assets/animation-vendor-BJZ0-vYR.js">
+  <link rel="modulepreload" crossorigin href="/codesprint-app/assets/three-vendor-DzH54Kd_.js">
+  <link rel="stylesheet" crossorigin href="/codesprint-app/assets/index-BJELUprK.css">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <script>
+    (function () {
+      const targetUrl = "https://unstop.com/p/codesprint-20-enthusia-50-symbiosis-institute-of-technology-nagpur-1622481?lb=i9smS0vw&utm_medium=Share&utm_source=harshkum8980&utm_campaign=Online_coding_challenge";
+
+      const updateHeistButton = () => {
+        // Find elements containing "JOIN THE HEIST"
+        const allElements = document.querySelectorAll('a, button, div, span, p, h1, h2, h3, h4, h5, h6');
+
+        for (const el of allElements) {
+          // Check text content
+          const text = el.innerText ? el.innerText.trim().toUpperCase() : "";
+
+          if (text.includes("JOIN THE HEIST")) {
+            // CRITICAL FIX: Ignore large containers that just happen to contain the text.
+            // If the text length is significantly longer than "JOIN THE HEIST", it's a wrapper.
+            // The button might contain "OPERATION ACTIVE" + "JOIN THE HEIST", so let's allow some buffer.
+            // But if it's > 100 chars, it's probably a section or body.
+            if (text.length > 60) continue;
+
+            // Only proceed if this element seems to be the button or a direct part of it.
+
+            // If it is an anchor, update it.
+            if (el.tagName === 'A') {
+              if (el.href !== targetUrl) {
+                el.href = targetUrl;
+                el.target = "_blank";
+                el.rel = "noopener noreferrer";
+              }
+            } else {
+              // For non-anchors, look for the closest clickable parent or use self if small
+              const clickable = el.closest('a') || el.closest('button') || el;
+
+              // Double check the clickable element isn't huge
+              if (clickable.innerText.length > 80) continue;
+
+              if (clickable.tagName === 'A') {
+                if (clickable.href !== targetUrl) {
+                  clickable.href = targetUrl;
+                  clickable.target = "_blank";
+                  clickable.rel = "noopener noreferrer";
+                }
+              } else {
+                if (!clickable.dataset.heistLinkAdded) {
+                  clickable.dataset.heistLinkAdded = "true";
+                  clickable.style.cursor = "pointer";
+                  clickable.onclick = (e) => { // Use onclick to override potential existing listeners more easily or just add one
+                    e.preventDefault();
+                    e.stopPropagation();
+                    window.open(targetUrl, '_blank');
+                  };
+                }
+              }
+            }
+          }
+        }
+      };
+
+      const observer = new MutationObserver((mutations) => {
+        updateHeistButton();
+      });
+
+      // Start observing
+      const startObserver = () => {
+        if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+          updateHeistButton();
+        } else {
+          window.addEventListener('DOMContentLoaded', startObserver);
+        }
+      };
+
+      if (document.readyState === 'loading') {
+        window.addEventListener('DOMContentLoaded', startObserver);
+      } else {
+        startObserver();
+      }
+
+      // Also run periodically
+      setInterval(updateHeistButton, 1000);
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>

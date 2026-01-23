@@ -1,0 +1,1757 @@
+/* ==========================================
+   ENTHUSIA 5.0 - MOBILE RESPONSIVE STYLES
+   Complete mobile-first responsive overrides
+   ========================================== */
+
+/* ==========================================
+   MOBILE BREAKPOINTS
+   xs: 0-479px (Small phones)
+   sm: 480-767px (Large phones)
+   md: 768-991px (Tablets)
+   lg: 992px+ (Desktop - base styles)
+   ========================================== */
+
+/* ==========================================
+   BASE MOBILE RESET & IMPROVEMENTS
+   ========================================== */
+@media (max-width: 991px) {
+    html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+        overflow-x: hidden;
+    }
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    /* Prevent horizontal scroll */
+    .main-content,
+    .section {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    /* Global overflow fix for all fixed elements */
+    #root {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    .section {
+        padding-top: 80px !important;
+    }
+}
+
+/* ==========================================
+   TABLET STYLES (768px - 991px)
+   ========================================== */
+@media (max-width: 991px) and (min-width: 768px) {
+
+    /* Section Adjustments */
+    .section {
+        padding: 3rem 1.5rem;
+    }
+
+    /* Navigation */
+    .vertical-nav {
+        left: 1rem;
+        transform: translateY(-50%) scale(0.9);
+    }
+
+    .vertical-nav-item {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.7rem;
+    }
+
+    /* Hero Title */
+    .hero-title {
+        font-size: clamp(3rem, 10vw, 5rem);
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+    }
+
+    /* History Cards */
+    .history-card {
+        width: clamp(280px, 60vw, 420px);
+        height: auto;
+        aspect-ratio: 3/2;
+        margin-left: calc(-1 * clamp(280px, 60vw, 420px) / 2);
+        margin-top: calc(-1 * clamp(280px, 60vw, 420px) * 0.66 / 2);
+    }
+
+    /* Team Circles */
+    .team-circle-outer {
+        width: min(80vw, 500px);
+        height: min(80vw, 500px);
+    }
+
+    .team-circle-inner {
+        width: min(65vw, 400px);
+        height: min(65vw, 400px);
+    }
+
+    .team-circle-gradient {
+        width: min(50vw, 320px);
+        height: min(50vw, 320px);
+    }
+
+    .team-member {
+        width: clamp(60px, 12vw, 80px);
+        height: clamp(60px, 12vw, 80px);
+    }
+
+    .team-member .member-info {
+        padding: 5px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding-left: 100px;
+    }
+
+    .contact-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* ==========================================
+   LARGE PHONE STYLES (480px - 767px)
+   ========================================== */
+@media (max-width: 767px) {
+
+    /* Global Section Adjustments */
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    /* HIDE DESKTOP NAVIGATION - Convert to Mobile Menu */
+    .vertical-nav {
+        display: none !important;
+    }
+
+    /* Header Navigation - Mobile Compact */
+    .header-nav {
+        height: 70px;
+        padding: 1rem 1.5rem;
+    }
+
+    .sit-badge-container {
+        padding: clamp(0.6rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
+        min-width: clamp(100px, 25vw, 140px);
+        clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
+    }
+
+    .sit-badge {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        letter-spacing: clamp(1px, 0.5vw, 3px);
+        white-space: nowrap;
+    }
+
+    .header-link {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        padding: 0.4rem 0.8rem;
+        top: 1.5rem;
+    }
+
+    .header-link:first-child {
+        right: 60%;
+    }
+
+    .header-link:last-child {
+        left: 60%;
+    }
+
+    /* Global Header Visuals */
+    .global-header-visuals {
+        height: 70px;
+    }
+
+    .techfest-vis-canvas {
+        height: 40px;
+    }
+
+    .techfest-badge {
+        font-size: 0.7rem;
+        padding: 0.4rem 1.2rem;
+        letter-spacing: 0.15em;
+    }
+
+    /* HERO SECTION - Mobile Optimized */
+    .hero-section {
+        padding: 1rem;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 4px;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 12vw, 3.5rem);
+        letter-spacing: 0.02em;
+    }
+
+    .hero-tagline {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        letter-spacing: 1px;
+    }
+
+    /* Audio Visualizer - Compact */
+    .visualizer-container {
+        bottom: 5rem;
+        height: 60px;
+        padding: 0 1rem;
+    }
+
+    .vis-canvas {
+        max-width: 200px;
+    }
+
+    .visualizer-spacer {
+        width: 120px;
+    }
+
+    .start-text {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+        bottom: 2rem;
+    }
+
+    .scroll-indicator span {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+    }
+
+    .scroll-indicator .line {
+        height: 30px;
+    }
+
+    .dolly-scroll-hint {
+        bottom: 2rem;
+    }
+
+    .dolly-scroll-hint span {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+    }
+
+    /* SECTION TITLES - Mobile Scale */
+    .section-title {
+        font-size: clamp(1.8rem, 8vw, 3.5rem);
+        margin-bottom: clamp(0.5rem, 2vw, 1rem);
+        letter-spacing: 0.05em;
+        padding-right: 60px !important;
+        /* Space for hamburger menu */
+        text-align: left !important;
+        padding-left: 1.5rem !important;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Ring Section Title */
+    .ring-section-title {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+        top: 8%;
+        padding-right: 70px !important;
+        text-align: left !important;
+        padding-left: 1.5rem !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* TECHFEST SECTION - Mobile */
+    .techfest-star-container {
+        width: min(50vw, 200px);
+        height: min(50vw, 200px);
+    }
+
+    .techfest-text-item {
+        font-size: clamp(1.2rem, 6vw, 2rem);
+    }
+
+    .techfest-text-item.active {
+        letter-spacing: 2px;
+    }
+
+    /* ==========================================
+       CULTURAL EVENTS SECTION - Mobile Fix
+       ========================================== */
+    .cf-container {
+        padding: 6rem 1rem 3rem 1rem !important;
+        padding-left: 1rem !important;
+        gap: 1rem !important;
+        max-width: 100% !important;
+    }
+
+    .cf-header {
+        padding-left: 0 !important;
+        top: 3.5rem !important;
+    }
+
+    .cf-title {
+        font-size: 1.8rem !important;
+        letter-spacing: 0.05em !important;
+    }
+
+    .cf-card-wrapper {
+        width: clamp(120px, 35vw, 160px) !important;
+        height: auto !important;
+        aspect-ratio: 140/220 !important;
+    }
+
+    .cf-card {
+        padding: 1rem !important;
+    }
+
+    .cf-card-title h3 {
+        font-size: 0.85rem !important;
+    }
+
+    .cf-desc {
+        font-size: 0.55rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    .cf-icon-box {
+        padding: 0.75rem !important;
+        margin: 0.5rem 0 !important;
+    }
+
+    .cf-icon-box svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .cf-sys-id {
+        font-size: 0.6rem !important;
+    }
+
+    /* ==========================================
+       TECHFEST EVENTS SECTION - Mobile Fix
+       ========================================== */
+    .tf-container {
+        padding: 6rem 1rem 3rem 1rem !important;
+        padding-left: 1rem !important;
+        gap: 1rem !important;
+        max-width: 100% !important;
+    }
+
+    .tf-header {
+        padding-left: 0 !important;
+        top: 3.5rem !important;
+    }
+
+    .tf-title {
+        font-size: 1.8rem !important;
+        letter-spacing: 0.05em !important;
+    }
+
+    .tf-card-wrapper {
+        width: clamp(120px, 35vw, 160px) !important;
+        height: auto !important;
+        aspect-ratio: 140/220 !important;
+    }
+
+    .tf-card {
+        padding: 1rem !important;
+    }
+
+    .tf-card-title h3 {
+        font-size: 0.85rem !important;
+    }
+
+    .tf-desc {
+        font-size: 0.55rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    .tf-icon-box {
+        padding: 0.75rem !important;
+        margin: 0.5rem 0 !important;
+    }
+
+    .tf-icon-box svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .tf-sys-id {
+        font-size: 0.6rem !important;
+    }
+
+    /* PREVENT ALL HORIZONTAL OVERFLOW */
+    #cultural-events,
+    #techfest-events {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+
+    /* EVENT INFO - Stack Vertically */
+    .event-info {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .event-info-item {
+        padding: 0.5rem;
+    }
+
+    .event-info-label {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+    }
+
+    .event-info-value {
+        font-size: 1rem;
+    }
+
+    /* EVENT LABELS - Mobile Positions */
+    .event-label {
+        font-size: clamp(0.6rem, 3vw, 0.9rem);
+        letter-spacing: 1px;
+    }
+
+    .event-label.top-left,
+    .event-label.mid-left,
+    .event-label.bottom-left {
+        left: 3%;
+    }
+
+    .event-label.top-right,
+    .event-label.mid-right {
+        right: 3%;
+    }
+
+    .event-label.top-left {
+        top: 25%;
+    }
+
+    .event-label.top-right {
+        top: 25%;
+    }
+
+    .event-label.mid-left {
+        top: 45%;
+    }
+
+    .event-label.mid-right {
+        top: 45%;
+    }
+
+    .event-label.bottom-left {
+        top: 65%;
+    }
+
+    .event-label.bottom-center {
+        top: 82%;
+        font-size: 0.7rem;
+    }
+
+    /* CENTER DIAGRAM - Scaled Down */
+    .center-diagram-container {
+        width: min(60vw, 220px);
+        height: min(60vw, 220px);
+    }
+
+    .hexagon-rays::before {
+        width: 80px;
+        height: 80px;
+    }
+
+    .diagram-ray {
+        height: 100px;
+    }
+
+    .outer-ring-glow {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* SPONSORS SECTION - Mobile Card Stack */
+    .sponsors-section {
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .sponsors-container {
+        padding-top: 12vh !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+    }
+
+    .sponsors-header {
+        margin-bottom: 1rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 70px !important;
+        text-align: left !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .sponsors-header .section-title {
+        font-size: 1.8rem !important;
+    }
+
+    .cyber-stack-area {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 50vh !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 1rem !important;
+        position: relative !important;
+    }
+
+    .card-stack {
+        width: 260px;
+        height: 340px;
+        transform: scale(0.9);
+    }
+
+    /* Cyberpunk Card Stack - Mobile */
+    .cyber-card {
+        width: clamp(80px, 25vw, 120px) !important;
+        position: relative !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+        margin: clamp(0.25rem, 1vw, 0.75rem) !important;
+    }
+
+    .cyber-diamond {
+        width: clamp(110px, 35vw, 160px) !important;
+    }
+
+    .cyber-platinum {
+        width: clamp(80px, 25vw, 120px) !important;
+    }
+
+    .cyber-gold {
+        width: clamp(80px, 25vw, 120px) !important;
+    }
+
+    .cyber-card-footer {
+        padding: 0 4px !important;
+        height: 15% !important;
+    }
+
+    .cyber-title {
+        font-size: 7px !important;
+        max-width: 60px !important;
+    }
+
+    .cyber-subtext {
+        font-size: 5px !important;
+    }
+
+    .cyber-dots {
+        gap: 2px !important;
+    }
+
+    .cyber-dot {
+        width: 3px !important;
+        height: 3px !important;
+    }
+
+    .cyber-label {
+        font-size: 6px !important;
+        padding: 1px 4px !important;
+    }
+
+    .cyber-card-image-wrapper {
+        bottom: 18% !important;
+    }
+
+    /* HUD Progress - Mobile Position */
+    .hud-progress {
+        left: 5px !important;
+        bottom: 10px !important;
+        font-size: 8px !important;
+        gap: 8px !important;
+    }
+
+    .phase-indicator {
+        width: 100px !important;
+        gap: 6px !important;
+    }
+
+    .phase-label {
+        font-size: 7px !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .phase-bar {
+        height: 3px !important;
+    }
+
+    /* HISTORY SECTION - Mobile Cards */
+    .history-container {
+        height: 300px;
+    }
+
+    .history-card {
+        width: 90vw;
+        max-width: 320px;
+        height: 200px;
+        margin-left: calc(-45vw);
+        margin-top: -100px;
+    }
+
+    .card-overlay {
+        padding: 1.2rem;
+    }
+
+    .card-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .card-text p {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+
+    .card-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
+    .card-num {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    /* Text-Only Card Variant */
+    .card-msg-content {
+        padding: 1.5rem;
+    }
+
+    .card-msg-content .card-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .card-msg-content .card-footer p {
+        font-size: 0.9rem;
+    }
+
+    /* TEAM SECTION - Mobile Redesign: Grid Layout */
+    .team-section {
+        min-height: auto !important;
+        height: auto !important;
+        padding: 80px 1rem 60px 1rem !important;
+    }
+
+    .team-container {
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* Hide the circular ring elements on mobile, but keep content visible */
+    .team-circle-outer,
+    .team-circle-inner {
+        display: contents !important;
+        /* Make children flow out */
+        width: auto !important;
+        height: auto !important;
+        border: none !important;
+        background: none !important;
+    }
+
+    .team-circle-gradient {
+        display: contents !important;
+        /* Make children flow out */
+        width: auto !important;
+        height: auto !important;
+        background: none !important;
+    }
+
+    /* Create a new grid container for mobile */
+    .team-circle-content {
+        position: relative !important;
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.6rem !important;
+        padding: 0.5rem !important;
+        max-width: 360px !important;
+        margin: 0 auto !important;
+    }
+
+    .team-member {
+        position: relative !important;
+        width: 100% !important;
+        height: 130px !important;
+        transform: none !important;
+        border-radius: 12px !important;
+        border: 2px solid rgba(139, 92, 246, 0.4) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(139, 92, 246, 0.15) !important;
+        overflow: hidden !important;
+    }
+
+    /* Reorder for mobile: Sunidhi, Prathamesh, Jash, Saksham, Om first */
+    .team-member:nth-child(1) {
+        order: 3;
+    }
+
+    /* Jash -> 3rd */
+    .team-member:nth-child(2) {
+        order: 4;
+    }
+
+    /* Saksham -> 4th */
+    .team-member:nth-child(3) {
+        order: 5;
+    }
+
+    /* Om -> 5th */
+    .team-member:nth-child(4) {
+        order: 6;
+    }
+
+    /* Harsh -> 6th */
+    .team-member:nth-child(5) {
+        order: 7;
+    }
+
+    /* Parth -> 7th */
+    .team-member:nth-child(6) {
+        order: 8;
+    }
+
+    /* Member -> 8th */
+    .team-member:nth-child(7) {
+        order: 1;
+    }
+
+    /* Sunidhi -> 1st */
+    .team-member:nth-child(8) {
+        order: 2;
+    }
+
+    /* Prathamesh -> 2nd */
+
+    .team-member img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .team-member .member-info {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        inset: auto 0 0 0 !important;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent) !important;
+        padding: 0.8rem !important;
+        opacity: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-end !important;
+    }
+
+    .team-member .member-name {
+        font-size: 0.7rem !important;
+        font-weight: 700 !important;
+        color: #fff !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .team-member .member-role {
+        font-size: 0.55rem !important;
+        color: rgba(139, 92, 246, 0.9) !important;
+        margin-top: 0.1rem !important;
+    }
+
+    .team-center-text {
+        position: relative !important;
+        order: -1 !important;
+        opacity: 1 !important;
+        text-align: center !important;
+        margin-bottom: 1rem !important;
+        padding: 0 60px 0 1rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        grid-column: 1 / -1 !important;
+        /* Span full width */
+    }
+
+    .team-center-text h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    .team-center-text .gradient-text {
+        font-size: 1.6rem !important;
+    }
+
+    .team-center-text p {
+        font-size: 0.75rem !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin-top: 0.3rem !important;
+    }
+
+}
+
+/* ==========================================
+   PHONE STYLES (0px - 767px) - Countdown, Contact, Loader
+   ========================================== */
+@media (max-width: 767px) {
+
+    /* COUNTDOWN SECTION - Mobile */
+    .countdown-title {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        margin-bottom: 2rem;
+    }
+
+    .countdown-timer {
+        gap: clamp(0.5rem, 2vw, 1.5rem);
+        margin-bottom: 2rem;
+    }
+
+    .countdown-item {
+        min-width: clamp(60px, 18vw, 90px);
+    }
+
+    .countdown-value {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .countdown-label {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+
+    .countdown-date {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .register-btn {
+        font-size: 0.85rem;
+        padding: 0.8rem 2rem;
+        letter-spacing: 2px;
+    }
+
+    /* CONTACT SECTION - Mobile Stack */
+    .contact-section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 100px !important;
+        /* More space for header/visualizer */
+        padding-bottom: 1rem !important;
+        align-items: flex-start !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+    }
+
+    .contact-container {
+        padding: 0 0.8rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .contact-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.6rem !important;
+        margin-top: 0 !important;
+        text-align: center !important;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+        width: 100% !important;
+    }
+
+    .contact-info {
+        gap: 0.6rem !important;
+    }
+
+
+    .info-item {
+        gap: 0.5rem !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+    }
+
+    .info-icon {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        border-radius: 6px !important;
+    }
+
+    .info-icon svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .info-text h3 {
+        font-size: 0.7rem !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 0.1rem !important;
+    }
+
+    .info-text p {
+        font-size: 0.65rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .social-links {
+        margin-top: 0.3rem !important;
+    }
+
+    .social-links h3 {
+        font-size: 0.6rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .social-icons {
+        gap: 0.5rem !important;
+    }
+
+    .social-icon {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .social-icon svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    /* Contact Map - Smaller for mobile */
+    .contact-map {
+        position: relative !important;
+        width: 100% !important;
+        height: 70px !important;
+        min-height: 70px !important;
+        max-height: 80px !important;
+        margin-top: 0.3rem !important;
+        margin-bottom: 0 !important;
+        border-radius: 6px !important;
+        overflow: hidden !important;
+    }
+
+    .contact-map iframe {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Ensure contact-info doesn't overflow */
+    .contact-info {
+        position: relative !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: visible !important;
+        gap: 0.5rem !important;
+    }
+
+    /* Contact Form - Smaller for mobile */
+    .contact-form-wrapper {
+        padding: 0.8rem !important;
+        border-radius: 10px !important;
+        margin-bottom: 1rem !important;
+        position: relative !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .form-group {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .form-group label {
+        font-size: 0.55rem !important;
+        margin-bottom: 0.15rem !important;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.75rem !important;
+        padding: 0.35rem 0 !important;
+    }
+
+    .form-group textarea {
+        min-height: 40px !important;
+    }
+
+    .cyber-button {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.7rem !important;
+        letter-spacing: 1px !important;
+        margin-top: 0.4rem !important;
+    }
+
+    .cyber-button svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    /* Hide cyber grid overlay on mobile */
+    .cyber-grid-overlay {
+        display: none !important;
+    }
+
+    /* LOADER - Mobile */
+    .loader-text {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    .loader-bar {
+        width: clamp(120px, 40vw, 200px);
+    }
+
+}
+
+/* End of @media (max-width: 767px) for countdown/contact/loader */
+
+
+/* ==========================================
+   SMALL PHONE STYLES (0px - 479px)
+   ========================================== */
+@media (max-width: 479px) {
+
+    /* Extra small adjustments */
+    .section {
+        padding: 1.5rem 0.75rem;
+    }
+
+    /* Header - Ultra Compact */
+    .header-nav {
+        height: 60px;
+        padding: 0.75rem 1rem;
+    }
+
+    .sit-badge-container {
+        padding: 0.8rem 1.5rem 0.6rem 1.5rem;
+        min-width: 100px;
+    }
+
+    .sit-badge {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        white-space: nowrap;
+    }
+
+    .header-link {
+        font-size: clamp(0.6rem, 2vw, 0.75rem);
+        padding: 0.3rem 0.6rem;
+        top: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    .header-link span:not(.contact-icon) {
+        display: none;
+        /* Hide text, show only icon */
+    }
+
+    /* Hero - Extra Small */
+    .hero-subtitle {
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.6rem, 14vw, 2.5rem);
+    }
+
+    .hero-tagline {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: clamp(1.5rem, 10vw, 2rem);
+    }
+
+    .section-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .ring-section-title {
+        font-size: clamp(1.5rem, 10vw, 2rem);
+        top: 6%;
+    }
+
+    /* TechFest Star */
+    .techfest-star-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .techfest-text-item {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    /* Event Labels - Very Compact */
+    .event-label {
+        font-size: 0.55rem;
+    }
+
+    /* ==========================================
+       EXTRA SMALL - Cultural & TechFest Events
+       ========================================== */
+    .cf-container,
+    .tf-container {
+        padding: 5rem 0.5rem 2rem 0.5rem !important;
+        gap: 0.75rem !important;
+    }
+
+    .cf-header,
+    .tf-header {
+        top: 2.5rem !important;
+    }
+
+    .cf-title,
+    .tf-title {
+        font-size: 1.4rem !important;
+    }
+
+    .cf-card-wrapper,
+    .tf-card-wrapper {
+        width: 110px !important;
+        height: 180px !important;
+    }
+
+    .cf-card,
+    .tf-card {
+        padding: 0.75rem !important;
+    }
+
+    .cf-card-title h3,
+    .tf-card-title h3 {
+        font-size: 0.7rem !important;
+    }
+
+    .cf-desc,
+    .tf-desc {
+        font-size: 0.5rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    .cf-icon-box,
+    .tf-icon-box {
+        padding: 0.5rem !important;
+        margin: 0.25rem 0 !important;
+    }
+
+    .cf-icon-box svg,
+    .tf-icon-box svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .cf-sys-id,
+    .tf-sys-id {
+        font-size: 0.5rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    .cf-underline,
+    .tf-underline {
+        width: 15px !important;
+    }
+
+    .tf-btn {
+        padding: 0.3rem 0.5rem !important;
+        font-size: 0.6rem !important;
+    }
+
+    /* ==========================================
+       EXTRA SMALL - Sponsors Section
+       ========================================== */
+    .sponsors-header .section-title {
+        font-size: 1.5rem !important;
+    }
+
+    .cyber-card {
+        width: 80px !important;
+    }
+
+    .cyber-diamond {
+        width: 110px !important;
+    }
+
+    .cyber-platinum,
+    .cyber-gold {
+        width: 80px !important;
+    }
+
+    .cyber-title {
+        font-size: 6px !important;
+        max-width: 50px !important;
+    }
+
+    .cyber-subtext {
+        font-size: 4px !important;
+    }
+
+    .cyber-label {
+        font-size: 5px !important;
+        padding: 1px 3px !important;
+    }
+
+    /* Hide HUD progress on very small screens */
+    .hud-progress {
+        display: none !important;
+    }
+
+    /* ==========================================
+       EXTRA SMALL - Contact Section
+       ========================================== */
+    .contact-section {
+        padding-top: 70px !important;
+    }
+
+    .contact-title {
+        font-size: 1.4rem !important;
+    }
+
+    .contact-info {
+        gap: 1rem !important;
+    }
+
+    .info-icon {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+    }
+
+    .info-icon svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .info-text h3 {
+        font-size: 0.75rem !important;
+    }
+
+    .info-text p {
+        font-size: 0.7rem !important;
+    }
+
+    .social-icon {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .contact-form-wrapper {
+        padding: 1rem !important;
+    }
+
+    .form-group label {
+        font-size: 0.6rem !important;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.8rem !important;
+    }
+
+    .cyber-button {
+        padding: 0.6rem 1rem !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* Diagrams */
+    .center-diagram-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .hexagon-rays::before {
+        width: 60px;
+        height: 60px;
+    }
+
+    .diagram-ray {
+        height: 80px;
+    }
+
+    .outer-ring-glow {
+        width: 160px;
+        height: 160px;
+    }
+
+    /* Cards - Extra Compact */
+    .cyber-card {
+        width: 100px;
+    }
+
+    .cyber-diamond {
+        width: 140px;
+    }
+
+    .cyber-title {
+        font-size: 7px;
+        max-width: 60px;
+    }
+
+    .history-card {
+        width: 90vw;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 3/2;
+        margin-left: -45vw;
+        margin-top: calc(-1 * 90vw * 0.66 / 2);
+    }
+
+    .card-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-text p {
+        font-size: 0.75rem;
+    }
+
+    /* Team - Extra Small */
+    .team-circle-outer {
+        width: 280px;
+        height: 280px;
+    }
+
+    .team-circle-inner {
+        width: 220px;
+        height: 220px;
+    }
+
+    .team-circle-gradient {
+        width: 170px;
+        height: 170px;
+    }
+
+    .team-member {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+    }
+
+    .team-center-text h2 {
+        font-size: 1.1rem;
+    }
+
+    .team-center-text p {
+        font-size: 0.6rem;
+        max-width: 120px;
+    }
+
+    /* Countdown - Compact */
+    .countdown-timer {
+        gap: 0.5rem;
+    }
+
+    .countdown-item {
+        min-width: 55px;
+    }
+
+    .countdown-value {
+        font-size: clamp(1.5rem, 10vw, 2.5rem);
+    }
+
+    .countdown-label {
+        font-size: 0.55rem;
+    }
+
+    .register-btn {
+        font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+        padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.2rem, 4vw, 2rem);
+    }
+
+    /* Contact - Ultra Compact */
+    .contact-title {
+        font-size: 1.5rem;
+    }
+
+    .info-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .info-text h3 {
+        font-size: 0.9rem;
+    }
+
+    .info-text p {
+        font-size: 0.8rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1rem;
+    }
+
+    .cyber-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    /* Loader */
+    .loader-text {
+        font-size: 10px;
+    }
+
+    .loader-bar {
+        width: 120px;
+    }
+}
+
+/* ==========================================
+   LANDSCAPE MODE ADJUSTMENTS
+   ========================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .section {
+        padding: 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
+
+    .hero-subtitle,
+    .hero-tagline {
+        display: none;
+    }
+
+    .visualizer-container {
+        display: none;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .dolly-scroll-hint {
+        display: none;
+    }
+
+    .countdown-timer {
+        margin-bottom: 1rem;
+    }
+
+    .countdown-item {
+        min-width: 60px;
+    }
+
+    .countdown-value {
+        font-size: 2rem;
+    }
+
+    .countdown-title {
+        margin-bottom: 1rem;
+    }
+
+    .history-card {
+        height: 200px;
+    }
+
+    .team-circle-outer {
+        transform: scale(0.5);
+    }
+}
+
+/* ==========================================
+   TOUCH DEVICE ENHANCEMENTS
+   ========================================== */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Larger touch targets */
+    .vertical-nav-item {
+        padding: 1rem 1.5rem;
+    }
+
+    .header-link {
+        padding: 0.75rem 1rem;
+    }
+
+    .event-label {
+        padding: 0.5rem;
+    }
+
+    .cyber-card {
+        cursor: default;
+    }
+
+    .cyber-card:hover {
+        transform: translate(-50%, -50%);
+    }
+
+    .team-member:hover img {
+        transform: scale(1);
+    }
+
+    .team-member:hover .member-info {
+        opacity: 0;
+    }
+
+    /* Active states for touch */
+    .cyber-card:active {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .social-icon:active {
+        transform: translateY(-2px);
+        background: rgba(236, 72, 153, 0.2);
+    }
+
+    .register-btn:active {
+        transform: translateY(-2px) scale(1.02);
+    }
+}
+
+/* ==========================================
+   HIGH CONTRAST / ACCESSIBILITY
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .section {
+        transition: none;
+    }
+
+    .center-diagram {
+        animation: none;
+    }
+
+    .techfest-star-container.bright {
+        animation: none;
+    }
+
+    .film-grain {
+        animation: none;
+    }
+
+    .dolly-scroll-hint .arrow {
+        animation: none;
+    }
+
+    .cyber-dot.pulse {
+        animation: none;
+    }
+}
+
+/* ==========================================
+   NOTCH / SAFE AREA SUPPORT
+   ========================================== */
+@supports (padding: max(0px)) {
+    .header-nav {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    .section {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    .contact-section {
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+}
+
+/* ==========================================
+   MOBILE NAVIGATION DRAWER
+   (Optional - Add if hamburger menu needed)
+   ========================================== */
+.mobile-nav-toggle {
+    display: none;
+    position: fixed;
+    top: 5rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(8px);
+    /* Reduced from 15px for performance */
+    border: 2px solid rgba(139, 92, 246, 0.5);
+    border-radius: 10px;
+    z-index: 99999;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(139, 92, 246, 0.3);
+    will-change: transform;
+    contain: layout style;
+}
+
+.mobile-nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 767px) {
+    .mobile-nav-toggle {
+        display: flex;
+    }
+}
+
+.mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(20px);
+    border-left: 2px solid rgba(139, 92, 246, 0.4);
+    z-index: 99998;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.mobile-nav-drawer.open {
+    right: 0;
+}
+
+.mobile-nav-drawer .nav-item {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-drawer .nav-item:hover,
+.mobile-nav-drawer .nav-item.active {
+    color: #fff;
+    background: rgba(139, 92, 246, 0.1);
+    border-left: 2px solid var(--color-primary);
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99997;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ==========================================
+   PRINT STYLES (Optional)
+   ========================================== */
+@media print {
+
+    .film-grain,
+    .vignette,
+    .scanlines,
+    .static-background,
+    canvas#hero-canvas,
+    .visualizer-container,
+    .global-header-visuals,
+    .vertical-nav,
+    .mobile-nav-toggle,
+    .mobile-nav-drawer {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    .section {
+        position: relative;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        page-break-after: always;
+    }
+}
