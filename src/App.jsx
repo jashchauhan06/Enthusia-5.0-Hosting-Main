@@ -9,15 +9,29 @@ import GlobalUI from './components/GlobalUI';
 
 function App() {
   const [images, setImages] = useState([]);
-  const [progress, setProgress] = useState(100); // Start at 100%
-  const [isLoaded, setIsLoaded] = useState(true); // Start as loaded
+  const [progress, setProgress] = useState(0); // Start at 0%
+  const [isLoaded, setIsLoaded] = useState(false); // Start as not loaded
   const [audioInstance, setAudioInstance] = useState(null);
 
   useEffect(() => {
     // Set document title for Enthusia page
     document.title = 'ENTHUSIA 5.0 | The Ultimate Tech & Cultural Fest - SIT NAGPUR';
 
-    // Load assets in background without blocking UI
+    // Check if this is a direct navigation to a section (like /#techfest-events)
+    const currentHash = window.location.hash;
+    const hasHashOnLoad = currentHash && currentHash !== '#' && currentHash.length > 1;
+    
+    console.log('Current hash:', currentHash);
+    console.log('Has hash on load:', hasHashOnLoad);
+    
+    // If navigating directly to a section, skip loading screen
+    if (hasHashOnLoad) {
+      console.log('Skipping loading screen for hash navigation');
+      setIsLoaded(true);
+      setProgress(100);
+    }
+
+    // Load assets
     const audio = new Audio('/bg.opus');
     audio.loop = true;
     audio.volume = 0.5;
@@ -35,8 +49,19 @@ function App() {
       img.src = `/backimages/img_${frameNumber.toString().padStart(3, '0')}.webp`;
       img.onload = () => {
         count++;
+        const currentProgress = Math.round((count / frameCount) * 100);
+        
+        // Only update progress if not skipping loading screen
+        if (!hasHashOnLoad) {
+          setProgress(currentProgress);
+        }
+        
         if (count === frameCount) {
           setImages(loadList);
+          // Set loaded after a small delay for smooth transition
+          setTimeout(() => {
+            setIsLoaded(true);
+          }, hasHashOnLoad ? 0 : 500);
         }
       };
       loadList[i] = img;

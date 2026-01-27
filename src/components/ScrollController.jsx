@@ -516,7 +516,7 @@ const ScrollController = () => {
                         'techfest': 'TECHFEST',
                         'techfest-events': 'TECH EVENTS',
                         'cultural': 'CULTURAL',
-                        'cultural-events': 'EVENTS',
+                        'cultural-events': 'CULT EVENTS',
                         'sponsors': 'SPONSORS',
                         'history': 'GALLERY',
                         'team': 'OUR TEAM',

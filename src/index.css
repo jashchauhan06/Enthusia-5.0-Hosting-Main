@@ -2978,3 +2978,37 @@
                 gap: 0;
             }
         }
+
+/* ==========================================
+   HIDE SCROLLBARS GLOBALLY
+========================================== */
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Specific styles for iframe content */
+iframe {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+iframe::-webkit-scrollbar {
+    display: none;
+}
+
+/* Event wrapper specific scrollbar hiding */
+.event-wrapper {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.event-wrapper::-webkit-scrollbar {
+    display: none;
+}

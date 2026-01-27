@@ -1,0 +1,1 @@
+import{j as o}from"./index-QLR6ooJd.js";function n({className:r}){return o.jsx("svg",{className:r,viewBox:"0 0 10 10",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:o.jsx("path",{d:"M1 9L9 1M9 1H2M9 1V8",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round",strokeLinejoin:"round"})})}export{n as default};

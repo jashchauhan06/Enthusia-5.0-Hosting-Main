@@ -1,131 +1,14 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/sitnovate-app/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SITNovate 2.0 - 24 Hour Hackathon</title>
-  <script type="module" crossorigin src="/sitnovate-app/assets/index-CFGrlOPU.js"></script>
-  <link rel="stylesheet" crossorigin href="/sitnovate-app/assets/index-C5ZncJjI.css">
-  <style>
-    /* Hide GO BACK button */
-    .absolute.bottom-20.left-8 {
-      display: none !important;
-    }
-
-    /* Move menu button to top-right next to sound button */
-    button.pointer-events-auto.text-hp-gold.uppercase.font-cinzel.font-bold.tracking-widest {
-      position: fixed !important;
-      top: 1rem !important;
-      right: 1rem !important;
-      z-index: 100 !important;
-    }
-
-    /* Move sound button to be next to menu button */
-    .w-6.h-6.border.rounded-full.flex.items-center.justify-center {
-      position: fixed !important;
-      top: 1rem !important;
-      right: 6rem !important;
-      z-index: 100 !important;
-    }
-
-    /* Target menu button container if needed */
-    .fixed.top-4.right-4.z-50 {
-      top: 1rem !important;
-      right: 1rem !important;
-    }
-
-    /* Hide the ornamental border around About section */
-    .border-hp-gold,
-    .border-\[\#d4af37\],
-    [class*="border"][class*="gold"],
-    svg[class*="absolute"][class*="pointer-events-none"],
-    .absolute.inset-0.pointer-events-none {
-      display: none !important;
-    }
-
-    /* Keep section headings on single line */
-    /* Keep section headings on single line */
-    h1,
-    h2,
-    .font-cinzel,
-    [class*="text-4xl"],
-    [class*="text-5xl"],
-    [class*="text-6xl"],
-    [class*="tracking-widest"] {
-      white-space: nowrap !important;
-      text-transform: none !important;
-      font-variant: normal !important;
-      font-variant-caps: normal !important;
-      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif !important;
-      letter-spacing: normal !important;
-      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif !important;
-      letter-spacing: normal !important;
-    }
-
-    /* Hide Sponsors section */
-  </style>
-  <script>
-    function hideElements() {
-      // Hide Workspaces list item (both specific text and empty items from removal)
-      document.querySelectorAll('li').forEach(li => {
-        const span = li.querySelector('span:last-child');
-        // Hide if text is 'Workspaces' or if it's empty (after bundle removal)
-        if (span) {
-          const text = span.textContent.trim();
-          if (text === 'Workspaces' || text === '') {
-            li.style.display = 'none';
-          }
-        } else if (li.textContent.trim() === '' || li.textContent.trim() === 'Workspaces') {
-          // Fallback for li without span structure
-          li.style.display = 'none';
-        }
-      });
-
-      // Cleanup empty headers/paragraphs if any
-      const sponsorClass = 'text-[#a0a0a0] font-cinzel text-[10px] md:text-base tracking-widest mb-4 opacity-80 text-center uppercase px-4';
-      document.querySelectorAll('p').forEach(p => {
-        if (p.className.includes(sponsorClass)) {
-          p.style.display = 'none';
-        }
-      });
-    }
-
-    // Run repeatedly to handle React hydration/rendering cycles
-    document.addEventListener('DOMContentLoaded', hideElements);
-    setInterval(hideElements, 100); 
-  </script>
-</head>
-
-<body>
-  <div id="root"></div>
-
-  <!-- Register Now Button -->
-  <a id="register-btn"
-    href="https://unstop.com/p/sitnovate-enthusia-50-symbiosis-institute-of-technology-nagpur-1626430?lb=i9smS0vw&utm_medium=Share&utm_source=harshkum8980&utm_campaign=Online_coding_challenge"
-    target="_blank" rel="noopener noreferrer" style="
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 9999;
-    background: linear-gradient(135deg, #d4af37 0%, #b8960c 100%);
-    color: #000;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-family: 'Cinzel', serif;
-    font-weight: bold;
-    font-size: 1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
-    transition: all 0.3s ease;
-    cursor: pointer;
-  " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 30px rgba(212, 175, 55, 0.6)';"
-    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 20px rgba(212, 175, 55, 0.4)';">
-    Register Now
-  </a>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/sitnovate-app/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SITNovate 2.0 - 24 Hour Hackathon</title>
+    <script type="module" crossorigin src="/sitnovate-app/assets/index-DLN9ITcO.js"></script>
+    <link rel="stylesheet" crossorigin href="/sitnovate-app/assets/index-D51ViAKx.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>

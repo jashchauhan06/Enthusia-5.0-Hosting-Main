@@ -1,1 +1,0 @@
-import{j as r}from"./index-1o_M5iRU.js";import{E as t}from"./EventWrapper-DhJ7Tq61.js";function o(){return r.jsx(t,{src:"/sitank-app/index.html",title:"SITank 2.0 | The Big Bull of Tech - ENTHUSIA 5.0",bgColor:"#120f0d"})}export{o as default};
