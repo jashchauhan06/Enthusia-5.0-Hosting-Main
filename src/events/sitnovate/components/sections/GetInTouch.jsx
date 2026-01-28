@@ -168,7 +168,6 @@ export default function GetInTouch() {
                 setStatus('error');
             }
         } catch (error) {
-            console.error("Submission error:", error);
             setStatus('error');
             setTimeout(() => setStatus('idle'), 4000);
         }

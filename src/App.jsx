@@ -21,12 +21,8 @@ function App() {
     const currentHash = window.location.hash;
     const hasHashOnLoad = currentHash && currentHash !== '#' && currentHash.length > 1;
     
-    console.log('Current hash:', currentHash);
-    console.log('Has hash on load:', hasHashOnLoad);
-    
     // If navigating directly to a section, skip loading screen
     if (hasHashOnLoad) {
-      console.log('Skipping loading screen for hash navigation');
       setIsLoaded(true);
       setProgress(100);
     }

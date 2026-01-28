@@ -13,7 +13,7 @@ const Navbar = ({ currentSection, onNavigate, audioTriggerRef }) => {
         setIsMuted(nextState);
         if (audioRef.current) {
             if (!nextState) {
-                audioRef.current.play().catch(e => console.log("Audio play failed:", e));
+                audioRef.current.play().catch(() => {});
             } else {
                 audioRef.current.pause();
             }
@@ -27,12 +27,11 @@ const Navbar = ({ currentSection, onNavigate, audioTriggerRef }) => {
             // Force play immediately
             const playAudio = () => {
                 if (audioRef.current && !isMuted) {
-                    audioRef.current.play().catch(e => {
-                        console.log("Audio autoplay failed:", e);
+                    audioRef.current.play().catch(() => {
                         // Retry on any user interaction
                         const retryPlay = () => {
                             if (audioRef.current && !isMuted) {
-                                audioRef.current.play().catch(err => console.log("Retry failed:", err));
+                                audioRef.current.play().catch(() => {});
                             }
                             document.removeEventListener('click', retryPlay);
                             document.removeEventListener('keydown', retryPlay);
@@ -56,7 +55,7 @@ const Navbar = ({ currentSection, onNavigate, audioTriggerRef }) => {
         if (audioTriggerRef) {
             audioTriggerRef.current = () => {
                 if (audioRef.current && !isMuted) {
-                    audioRef.current.play().catch(e => console.log("Audio trigger failed:", e));
+                    audioRef.current.play().catch(() => {});
                 }
             };
         }

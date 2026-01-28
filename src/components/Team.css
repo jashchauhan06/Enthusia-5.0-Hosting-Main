@@ -459,9 +459,9 @@
     inset: 0;
     z-index: 1000;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding: 6.5rem 1rem 1rem 1rem;
+    padding: 2rem 1rem;
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(8px);
     animation: fadeIn 0.3s ease;
@@ -482,8 +482,8 @@
     position: relative;
     width: 100%;
     max-width: 420px;
-    max-height: 80vh;
-    margin-top: 0.5rem;
+    max-height: 85vh;
+    margin: auto;
     background: linear-gradient(145deg,
             rgba(20, 20, 30, 0.98),
             rgba(15, 15, 20, 0.98));
@@ -750,7 +750,13 @@
 
     .team-modal {
         max-width: 95vw;
-        max-height: 85vh;
+        max-height: 90vh;
+        margin: auto;
+    }
+
+    .team-modal__backdrop {
+        padding: 1rem;
+        align-items: center;
     }
 
     .team-modal__image-container {
@@ -835,11 +841,13 @@
     }
 
     .team-modal__backdrop {
-        padding: 0.5rem;
+        padding: 0.75rem;
+        align-items: center;
     }
 
     .team-modal {
-        max-height: 90vh;
+        max-height: 92vh;
+        margin: auto;
     }
 
     .team-modal__details {

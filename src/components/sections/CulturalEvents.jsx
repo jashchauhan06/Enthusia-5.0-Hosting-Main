@@ -430,8 +430,7 @@ const CulturalEvents = forwardRef((props, ref) => {
                     .cultural-events-section { padding: 80px 20px 60px 20px; }
                     .cultural-events-header { 
                         margin-bottom: 1.2rem !important;
-                        padding-right: 60px !important;
-                        text-align: left !important;
+                        text-align: center !important;
                     }
                     .cultural-events-title { font-size: 2.2rem !important; }
                     .cultural-events-container { flex-wrap: wrap; gap: 1rem; }

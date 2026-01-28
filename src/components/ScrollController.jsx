@@ -255,7 +255,6 @@ const ScrollController = () => {
 
         // CRITICAL: Guard against null sections to prevent blank page
         if (!currentSection || !targetSection) {
-            console.warn('ScrollController: Section not found, skipping transition');
             return;
         }
 
@@ -442,6 +441,17 @@ const ScrollController = () => {
             const now = Date.now();
             if (isTransitioning.current || (now - lastTransitionTime.current < TRANSITION_COOLDOWN)) return;
             if (internalScrollActiveRef.current) return; // Block during internal scroll
+
+            // Check if user is typing in an input, textarea, or any editable element
+            const activeElement = document.activeElement;
+            const isTyping = activeElement && (
+                activeElement.tagName === 'INPUT' ||
+                activeElement.tagName === 'TEXTAREA' ||
+                activeElement.isContentEditable
+            );
+
+            // If user is typing, don't intercept keyboard events
+            if (isTyping) return;
 
             const currentIdx = activeIndexRef.current;
             if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {

@@ -307,6 +307,21 @@ const Team = forwardRef((props, ref) => {
             // Re-check scroll state
             updateScrollState();
 
+            // On mobile, if container has scrollable content, handle internal scroll first
+            if (!isDesktop && containerRef.current) {
+                const container = containerRef.current;
+                const scrollTop = container.scrollTop;
+                const scrollHeight = container.scrollHeight;
+                const clientHeight = container.clientHeight;
+                const maxScroll = scrollHeight - clientHeight;
+                
+                // If there's scrollable content and we haven't reached the bottom
+                if (maxScroll > 10 && scrollTop < maxScroll - 10) {
+                    container.scrollBy({ top: 150, behavior: 'smooth' });
+                    return true; // Consumed the scroll
+                }
+            }
+
             // If expanded and can scroll down, scroll internally first
             if (showAllRef.current && scrollStateRef.current.canScrollDown) {
                 scrollInternal('down');
@@ -331,6 +346,18 @@ const Team = forwardRef((props, ref) => {
             // Re-check scroll state
             updateScrollState();
 
+            // On mobile, if container has scrollable content and not at top, scroll up first
+            if (!isDesktop && containerRef.current) {
+                const container = containerRef.current;
+                const scrollTop = container.scrollTop;
+                
+                // If we're not at the top, scroll up
+                if (scrollTop > 10) {
+                    container.scrollBy({ top: -150, behavior: 'smooth' });
+                    return true; // Consumed the scroll
+                }
+            }
+
             // If expanded and can scroll up, scroll internally first
             if (showAllRef.current && scrollStateRef.current.canScrollUp) {
                 scrollInternal('up');
@@ -354,12 +381,35 @@ const Team = forwardRef((props, ref) => {
         },
         isFinished: () => {
             updateScrollState();
+            
+            // On mobile, check if container is scrolled to bottom
+            if (!isDesktop && containerRef.current) {
+                const container = containerRef.current;
+                const scrollTop = container.scrollTop;
+                const scrollHeight = container.scrollHeight;
+                const clientHeight = container.clientHeight;
+                const maxScroll = scrollHeight - clientHeight;
+                
+                // Not finished if there's more content to scroll
+                if (maxScroll > 10 && scrollTop < maxScroll - 10) {
+                    return false;
+                }
+            }
+            
             // Not finished if expanded and can still scroll down
             if (showAllRef.current && scrollStateRef.current.canScrollDown) return false;
             return progress >= 1;
         },
         isAtStart: () => {
             updateScrollState();
+            
+            // On mobile, check if container is at top
+            if (!isDesktop && containerRef.current) {
+                const scrollTop = containerRef.current.scrollTop;
+                // Not at start if scrolled down
+                if (scrollTop > 10) return false;
+            }
+            
             // Not at start if expanded and can still scroll up
             if (showAll && canScrollUp) return false;
 

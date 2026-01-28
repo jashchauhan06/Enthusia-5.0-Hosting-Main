@@ -2449,10 +2449,6 @@
             /* No max-width, extend to edges */
         }
 
-        .techfest-vis-canvas:first-child {
-            /* Mirror the left canvas to look symmetrical if needed, handled in JS usually or CSS scaling */
-        }
-
         /* Update section description for better styling */
         .techfest-section .section-description {
             font-family: var(--font-body);

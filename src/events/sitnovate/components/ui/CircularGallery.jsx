@@ -445,16 +445,12 @@ class App {
             Math.abs(x - this.clickStartX) < 10 && 
             Math.abs(y - this.clickStartY) < 10) {
             
-            console.log('Valid click detected, calling handleClick');
             this.handleClick(x, y);
         }
     }
 
     handleClick(x, y) {
-        console.log('handleClick called with:', x, y);
-        
         if (!this.medias || this.medias.length === 0) {
-            console.log('No medias available');
             return;
         }
 
@@ -471,14 +467,10 @@ class App {
             this.raycast.cast(mouse, this.camera, this.medias.map(m => m.plane));
             const hits = this.raycast.hits;
 
-            console.log('Raycast hits:', hits.length);
-
             if (hits.length > 0) {
                 const media = hits[0].object.media;
-                console.log('Media found via raycast:', media);
                 
                 if (media && media.url) {
-                    console.log('Opening URL via raycast:', media.url);
                     if (this.onItemClick) {
                         this.onItemClick(media.url);
                     } else {
@@ -490,17 +482,13 @@ class App {
         }
 
         // Fallback: find the center media (most visible card)
-        console.log('Using fallback method');
         const centerMedia = this.findCenterMedia();
         if (centerMedia && centerMedia.url) {
-            console.log('Opening center media URL:', centerMedia.url);
             if (this.onItemClick) {
                 this.onItemClick(centerMedia.url);
             } else {
                 window.open(centerMedia.url, '_blank', 'noopener,noreferrer');
             }
-        } else {
-            console.log('No center media found or no URL');
         }
     }
 
@@ -589,11 +577,9 @@ class App {
 
     onCanvasClick(e) {
         e.preventDefault();
-        console.log('Canvas click event triggered');
         
         // Don't handle click if user was dragging
         if (this.hasMoved) {
-            console.log('Click ignored due to movement');
             return;
         }
         
@@ -601,7 +587,6 @@ class App {
         const x = e.clientX;
         const y = e.clientY;
         
-        console.log('Processing canvas click at:', x, y);
         this.handleClick(x, y);
     }
     destroy() {

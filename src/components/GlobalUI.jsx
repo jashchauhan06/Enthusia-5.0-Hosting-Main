@@ -1,15 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 
-// Suppress AudioContext autoplay warnings
-const originalWarn = console.warn;
-console.warn = (...args) => {
-    const message = args[0]?.toString() || '';
-    if (message.includes('AudioContext') || message.includes('autoplay')) {
-        return; // Suppress AudioContext warnings
-    }
-    originalWarn.apply(console, args);
-};
-
 const GlobalUI = ({ audioInstance }) => {
     const leftCanvasRef = useRef(null);
     const rightCanvasRef = useRef(null);

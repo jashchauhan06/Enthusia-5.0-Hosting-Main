@@ -76,9 +76,9 @@ const Gallery = forwardRef((props, ref) => {
                     }
                     .gallery-header { 
                         margin-bottom: 1rem;
-                        padding-right: 60px;
-                        text-align: left;
+                        text-align: center;
                         width: 100%;
+                        margin-left: 0;
                     }
                     .gallery-title { font-size: 2rem; }
                 }

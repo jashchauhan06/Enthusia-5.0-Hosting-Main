@@ -50,7 +50,6 @@ const TeamCarousel = ({ items, onItemClick }) => {
     }, []);
 
     const handleCardClick = (item) => {
-        console.log('Card clicked:', item);
         if (item.linkedin && onItemClick) {
             onItemClick(item.linkedin);
         } else if (item.linkedin) {

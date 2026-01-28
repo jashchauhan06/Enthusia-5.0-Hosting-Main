@@ -185,8 +185,8 @@ const TechFestEvents = forwardRef((props, ref) => {
             desc: "GAMING TOURNAMENT",
             borderColor: "#f97316",
             iconColor: "#f97316",
-            link: null,
-            locked: true
+            link: "/esports",
+            internal: true
         }
     ];
 
@@ -465,11 +465,11 @@ const TechFestEvents = forwardRef((props, ref) => {
                     .tech-events-section { padding: 80px 20px 60px 20px; }
                     .tech-events-header { 
                         margin-bottom: 1.2rem !important;
-                        padding-right: 60px !important;
-                        text-align: left !important;
+                        text-align: center !important;
                     }
                     .tech-events-title { font-size: 2.2rem !important; }
                     .tech-events-container { flex-wrap: wrap; gap: 1rem; }
+                    .scifi-card { width: 45%; max-width: none; heig1rem; }
                     .scifi-card { width: 45%; max-width: none; height: 280px; }
                 }
                 @media (max-width: 600px) {
