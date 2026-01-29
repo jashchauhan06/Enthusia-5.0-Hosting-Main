@@ -32,7 +32,6 @@ const galleryItems = [
             '/images/cultural_fest/IMG_2849.webp',
             '/images/cultural_fest/IMG_2856.webp',
             '/images/cultural_fest/IMG_2878.webp',
-            '/images/cultural_fest/IMG_2911.webp',
         ]
     },
     {
