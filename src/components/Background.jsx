@@ -7,9 +7,9 @@ const Background = ({ images, isLoaded }) => {
     const frameIndexRef = useRef(0);
     const animationFrameRef = useRef(null);
 
-    // Configuration - updated for smoother animation
-    const frameCount = Math.ceil(481 / 5); // ~96 frames for smoother motion
-    const normalSpeed = 0.2; // Adjusted speed for more frames
+    // Configuration - optimized with fewer images
+    const frameCount = 48; // Using every 10th frame (480/10)
+    const normalSpeed = 0.15; // Adjusted speed for fewer frames
 
     // We might need to expose a way to affect speed via scroll, 
     // but for now let's implement the base loop.

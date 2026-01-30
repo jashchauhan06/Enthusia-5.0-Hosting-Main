@@ -33,15 +33,15 @@ function App() {
     audio.volume = 0.5;
     setAudioInstance(audio);
 
-    // Load images progressively - using every 5th frame for smoother animation
-    const frameStep = 5; // Every 5th frame instead of 15th = ~96 images (still much less than 481)
-    const frameCount = Math.ceil(481 / frameStep);
+    // Load images progressively - using every 10th frame for optimal performance
+    const frameStep = 10; // Every 10th frame = 48 images (much lighter!)
+    const frameCount = 48; // Total frames to load
     const loadList = new Array(frameCount);
 
     let count = 0;
     for (let i = 0; i < frameCount; i++) {
       const img = new Image();
-      const frameNumber = (i * frameStep) + 1;
+      const frameNumber = (i * frameStep) + 10; // Start from img_010.webp
       img.src = `/backimages/img_${frameNumber.toString().padStart(3, '0')}.webp`;
       img.onload = () => {
         count++;

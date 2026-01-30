@@ -45,9 +45,6 @@ const TeamCard = ({ member, onClick }) => {
                     onError={handleImageError}
                 />
                 
-                {/* Gradient overlay */}
-                <div className="team-card__overlay" />
-                
                 {/* Highlight badge for core members */}
                 {member.isHighlighted && (
                     <div className="team-card__badge">CORE</div>

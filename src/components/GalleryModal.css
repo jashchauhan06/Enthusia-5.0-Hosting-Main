@@ -349,17 +349,25 @@
 @media (max-width: 480px) {
     .gallery-modal-v2__backdrop {
         padding: 0;
+        padding-top: 2.5rem;
+        align-items: flex-start;
     }
 
     .gallery-modal-v2 {
-        max-height: 100vh;
-        height: 100vh;
+        max-height: calc(100vh - 2.5rem);
+        height: calc(100vh - 2.5rem);
         border-radius: 0;
         border: none;
+        margin-top: 0;
     }
 
     .gallery-modal-v2__header {
-        padding: 0.5rem 0.75rem;
+        padding: 1rem 0.75rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(10, 8, 20, 0.95);
+        backdrop-filter: blur(10px);
     }
 
     .gallery-modal-v2__title {

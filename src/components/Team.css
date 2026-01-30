@@ -468,6 +468,18 @@
     overflow-y: auto;
 }
 
+/* Desktop: Move modal upwards (closer to top) */
+@media (min-width: 769px) {
+    .team-modal__backdrop {
+        align-items: flex-start;
+        padding-top: 1rem;
+    }
+    
+    .team-modal {
+        margin-top: -2rem;
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

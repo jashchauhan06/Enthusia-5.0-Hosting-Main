@@ -1,1 +1,0 @@
-import{j as r}from"./index-BWr_vH1t.js";import{E as t}from"./EventWrapper-El4xsVIt.js";function n(){return r.jsx(t,{src:"/buildbrand-app/index.html",title:"BuildBrand | Brand Building Competition - ENTHUSIA 5.0",bgColor:"#0a0a0f",allowScroll:!0,buttonPosition:"original",buttonTheme:"blue"})}export{n as default};

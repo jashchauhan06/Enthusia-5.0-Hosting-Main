@@ -17,7 +17,7 @@ const CulturalFest = forwardRef((props, ref) => {
                 </div>
                 <div className="event-info-item">
                     <div className="event-info-label">Venue</div>
-                    <div className="event-info-value">Open Air Theatre</div>
+                    <div className="event-info-value">SIT NAGPUR</div>
                 </div>
                 <div className="event-info-item">
                     <div className="event-info-label">Events</div>

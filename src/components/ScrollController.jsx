@@ -42,8 +42,9 @@ const ScrollController = () => {
     // Scroll Accumulator refs to persist across renders
     const scrollAccumulatorRef = useRef(0);
     const lastScrollDirectionRef = useRef(0); // Track last scroll direction
-    const scrollThreshold = 100; // Increased to prevent accidental triggers
+    const scrollThreshold = 80; // Balanced threshold - responsive but not too sensitive
     const scrollDebounceTimerRef = useRef(null);
+    const lastScrollTimeRef = useRef(0); // Track last scroll event time
 
     // Keep activeIndexRef in sync with activeIndex state
     useEffect(() => {
@@ -387,6 +388,12 @@ const ScrollController = () => {
                 return;
             }
 
+            // Prevent rapid consecutive scrolls (debounce individual scroll events)
+            if (now - lastScrollTimeRef.current < 30) {
+                return; // Ignore scroll events that come too quickly
+            }
+            lastScrollTimeRef.current = now;
+
             // Determine scroll direction: 1 for down, -1 for up
             const currentDirection = e.deltaY > 0 ? 1 : -1;
             
@@ -402,14 +409,12 @@ const ScrollController = () => {
             lastScrollDirectionRef.current = currentDirection;
 
             // Accumulate scroll in current direction
-            scrollAccumulatorRef.current += e.deltaY;
+            scrollAccumulatorRef.current += Math.abs(e.deltaY);
 
             // Check if threshold reached
-            if (Math.abs(scrollAccumulatorRef.current) >= scrollThreshold) {
+            if (scrollAccumulatorRef.current >= scrollThreshold) {
                 const currentIdx = activeIndexRef.current;
-                // Use the SIGN of the accumulator, not the direction variable
-                // This ensures we use the actual accumulated direction
-                const navigationDirection = scrollAccumulatorRef.current > 0 ? 1 : -1;
+                const navigationDirection = currentDirection;
                 
                 // Reset accumulator and direction BEFORE calling to prevent double-triggers
                 scrollAccumulatorRef.current = 0;
@@ -426,7 +431,7 @@ const ScrollController = () => {
                 return; // Exit early after navigation
             }
 
-            // Reset accumulator after 250ms of no scrolling (increased for stability)
+            // Reset accumulator after 200ms of no scrolling
             if (scrollDebounceTimerRef.current) {
                 clearTimeout(scrollDebounceTimerRef.current);
             }
@@ -434,7 +439,7 @@ const ScrollController = () => {
                 scrollAccumulatorRef.current = 0;
                 lastScrollDirectionRef.current = 0;
                 scrollDebounceTimerRef.current = null;
-            }, 250);
+            }, 200);
         };
 
         const handleKey = (e) => {
@@ -526,7 +531,7 @@ const ScrollController = () => {
                         'techfest': 'TECHFEST',
                         'techfest-events': 'TECH EVENTS',
                         'cultural': 'CULTURAL',
-                        'cultural-events': 'CULT EVENTS',
+                        'cultural-events': 'EVENTS',
                         'sponsors': 'SPONSORS',
                         'history': 'GALLERY',
                         'team': 'OUR TEAM',
