@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 const Background = ({ images, isLoaded }) => {
     const canvasRef = useRef(null);
     const frameIndexRef = useRef(0);
+    const lastFrameRef = useRef(-1);
     const animationFrameRef = useRef(null);
 
     // Configuration - optimized with fewer images
@@ -73,7 +74,9 @@ const Background = ({ images, isLoaded }) => {
 
             const img = images[imgIndex];
 
-            if (img && img.complete && canvas) {
+            // Only redraw if frame changed (performance optimization)
+            if (img && img.complete && canvas && imgIndex !== lastFrameRef.current) {
+                lastFrameRef.current = imgIndex;
                 const ratio = Math.max(canvas.width / img.width, canvas.height / img.height);
                 const centerShift_x = (canvas.width - img.width * ratio) / 2;
                 const centerShift_y = (canvas.height - img.height * ratio) / 2;

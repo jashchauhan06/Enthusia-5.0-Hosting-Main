@@ -1,5 +1,5 @@
 import React, { forwardRef, useState, useImperativeHandle, useRef, useEffect } from 'react';
-import { Rocket, Terminal, Search, Briefcase, Lightbulb } from 'lucide-react';
+import { Rocket, Terminal, Search, Briefcase, Lightbulb, Gamepad2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import ElectricBorder from '../ElectricBorder';
 
@@ -181,7 +181,7 @@ const TechFestEvents = forwardRef((props, ref) => {
             id: 6,
             title: "ESPORTS",
             subtitle: "",
-            icon: <Terminal />,
+            icon: <Gamepad2 />,
             desc: "GAMING TOURNAMENT",
             borderColor: "#f97316",
             iconColor: "#f97316",

@@ -95,6 +95,8 @@
             background-repeat: no-repeat;
             z-index: 0;
             pointer-events: none;
+            will-change: auto;
+            contain: strict;
         }
 
         /* ==========================================
@@ -104,13 +106,14 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) translateZ(0);
             min-width: 100vw;
             min-height: 100vh;
             z-index: 1;
             pointer-events: none;
             filter: brightness(0.65) saturate(1.2) contrast(1.1);
             /* Stronger brightness reduction to prevent white flashes */
+            will-change: contents;
         }
 
         /* ==========================================
@@ -730,7 +733,9 @@
             opacity: 0.06;
             background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuNSIvPjwvc3ZnPg==');
             background-repeat: repeat;
-            animation: grain 0.5s steps(10) infinite;
+            animation: grain 1s steps(6) infinite;
+            will-change: transform;
+            contain: strict;
         }
 
         @keyframes grain {
@@ -1871,12 +1876,10 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 500px;
-            height: 320px;
-            margin-left: -250px;
-            /* Half of width for centering */
-            margin-top: -160px;
-            /* Half of height for centering */
+            width: min(500px, 90vw);
+            height: auto;
+            aspect-ratio: 500 / 320;
+            transform: translate(-50%, -50%);
             border-radius: 20px;
             overflow: hidden;
             background: #0a0a0a;
@@ -1890,12 +1893,10 @@
         /* Responsive Card Size */
         @media (max-width: 768px) {
             .history-card {
-                width: 340px;
-                height: 220px;
-                margin-left: -170px;
-                /* Half of width for centering */
-                margin-top: -110px;
-                /* Half of height for centering */
+                width: min(340px, 90vw);
+                height: auto;
+                aspect-ratio: 500 / 320;
+                /* transform already handles centering */
             }
         }
 
@@ -2023,8 +2024,8 @@
         }
 
         .team-circle-outer {
-            width: 340px;
-            height: 340px;
+            width: min(340px, 80vw);
+            height: min(340px, 80vw);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -2038,8 +2039,8 @@
         }
 
         .team-circle-inner {
-            width: 280px;
-            height: 280px;
+            width: min(280px, 65vw);
+            height: min(280px, 65vw);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -2054,8 +2055,8 @@
         }
 
         .team-circle-gradient {
-            width: 240px;
-            height: 240px;
+            width: min(240px, 55vw);
+            height: min(240px, 55vw);
             border-radius: 50%;
             background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
             padding: 3px;
@@ -2725,8 +2726,8 @@
             top: 0;
             left: 0;
             padding-top: 100px;
-            padding-left: 220px;
-            padding-right: 40px;
+            padding-left: clamp(40px, 15vw, 220px);
+            padding-right: clamp(20px, 5vw, 40px);
             box-sizing: border-box;
         }
 

@@ -8,7 +8,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8rem 2rem 4rem 240px; /* Increased top padding to move content down */
+    padding: 8rem 2rem 4rem 240px;
+    /* Increased top padding to move content down */
 }
 
 .team-container {
@@ -468,15 +469,11 @@
     overflow-y: auto;
 }
 
-/* Desktop: Move modal upwards (closer to top) */
+/* Desktop: Position modal higher on screen */
 @media (min-width: 769px) {
     .team-modal__backdrop {
         align-items: flex-start;
-        padding-top: 1rem;
-    }
-    
-    .team-modal {
-        margin-top: -2rem;
+        padding-bottom: 6rem;
     }
 }
 
@@ -494,8 +491,8 @@
     position: relative;
     width: 100%;
     max-width: 420px;
-    max-height: 85vh;
-    margin: auto;
+    max-height: min(85vh, 600px);
+    margin: 5rem auto auto auto;
     background: linear-gradient(145deg,
             rgba(20, 20, 30, 0.98),
             rgba(15, 15, 20, 0.98));
@@ -551,6 +548,7 @@
     flex-direction: column;
     height: 100%;
     overflow: hidden;
+    margin-top: -1rem;
 }
 
 .team-modal__image-container {
@@ -667,9 +665,10 @@
 /* Large tablets and small desktops */
 @media (max-width: 1024px) {
     .team-section {
-        padding: 4rem 2rem 4rem 200px; /* Reduced left padding for smaller screens */
+        padding: 4rem 2rem 4rem 200px;
+        /* Reduced left padding for smaller screens */
     }
-    
+
     .team-grid {
         grid-template-columns: repeat(5, 1fr);
         gap: 0.875rem;
@@ -684,7 +683,8 @@
 /* Tablets */
 @media (max-width: 768px) {
     .team-section {
-        padding: 3rem 1rem; /* Remove left padding on mobile */
+        padding: 3rem 1rem;
+        /* Remove left padding on mobile */
     }
 
     /* Hide pagination on mobile/tablet */

@@ -1,5 +1,6 @@
 
 import React, { forwardRef } from 'react';
+import { MapPin } from 'lucide-react';
 
 const CulturalFest = forwardRef((props, ref) => {
     return (
@@ -17,7 +18,15 @@ const CulturalFest = forwardRef((props, ref) => {
                 </div>
                 <div className="event-info-item">
                     <div className="event-info-label">Venue</div>
-                    <div className="event-info-value">SIT NAGPUR</div>
+                    <a
+                        href="https://maps.app.goo.gl/g3XdmfGPfmLLG2BS7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="venue-button"
+                    >
+                        <MapPin size={18} />
+                        <span>SIT Nagpur Campus</span>
+                    </a>
                 </div>
                 <div className="event-info-item">
                     <div className="event-info-label">Events</div>

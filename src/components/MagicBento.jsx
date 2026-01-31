@@ -12,7 +12,7 @@ const cardData = [
     {
         color: '#060010',
         title: 'What is Enthusia?',
-        description: 'More than a fest—it\'s a platform where innovators build under pressure, creators perform on grand stages, and leaders pitch bold ideas. From 24-hour hackathons and coding battles to cultural showcases and celebrity nights, we unite diverse talents on one immersive stage.',
+        description: 'More than a fest it is a platform where innovators build under pressure, creators perform on grand stages, and leaders pitch bold ideas. From 24-hour hackathons and coding battles to cultural showcases and celebrity nights, we unite diverse talents on one immersive stage.',
         label: 'THE EXPERIENCE'
     },
     {
