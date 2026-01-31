@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
 export default function EventWrapper({ src, title, bgColor = '#050505', allowScroll = false, buttonPosition = 'default', buttonTheme = 'default' }) {
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         // Set document title
@@ -32,6 +33,10 @@ export default function EventWrapper({ src, title, bgColor = '#050505', allowScr
         // usage of replace: false allows user to use browser back button to return to the event
         // The ScrollController in the main App will detect the hash and set the active section accordingly
         window.location.href = '/#techfest-events';
+    };
+
+    const handleIframeLoad = () => {
+        setIsLoading(false);
     };
 
     // Theme configurations
@@ -99,8 +104,56 @@ export default function EventWrapper({ src, title, bgColor = '#050505', allowScr
                     .event-wrapper::-webkit-scrollbar {
                         display: none;
                     }
+                    
+                    @keyframes skeleton-pulse {
+                        0%, 100% {
+                            opacity: 0.6;
+                        }
+                        50% {
+                            opacity: 1;
+                        }
+                    }
+                    
+                    .skeleton-loader {
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(90deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.2) 50%, rgba(139, 92, 246, 0.1) 100%);
+                        background-size: 200% 100%;
+                        animation: skeleton-pulse 2s infinite;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 20px;
+                        z-index: 10001;
+                    }
+                    
+                    .skeleton-item {
+                        background: rgba(139, 92, 246, 0.2);
+                        border: 1px solid rgba(139, 92, 246, 0.3);
+                        border-radius: 4px;
+                        animation: skeleton-pulse 2s infinite;
+                    }
+                    
+                    .skeleton-header {
+                        width: 300px;
+                        height: 40px;
+                    }
+                    
+                    .skeleton-content {
+                        width: 80%;
+                        height: 400px;
+                    }
                 `
             }} />
+            
+            {/* Skeleton Loader */}
+            {isLoading && (
+                <div className="skeleton-loader">
+                    <div className="skeleton-item skeleton-header"></div>
+                    <div className="skeleton-item skeleton-content"></div>
+                </div>
+            )}
             
             {/* Back Button */}
             <button
@@ -146,6 +199,7 @@ export default function EventWrapper({ src, title, bgColor = '#050505', allowScr
             <iframe
                 src={src}
                 className="event-wrapper"
+                onLoad={handleIframeLoad}
                 style={{
                     width: '100%',
                     height: '100%',
@@ -155,6 +209,8 @@ export default function EventWrapper({ src, title, bgColor = '#050505', allowScr
                     // Hide scrollbar but allow scrolling
                     scrollbarWidth: 'none', // Firefox
                     msOverflowStyle: 'none', // IE and Edge
+                    opacity: isLoading ? 0 : 1,
+                    transition: 'opacity 0.3s ease'
                 }}
                 scrolling={allowScroll ? "yes" : "no"}
                 seamless="seamless"
