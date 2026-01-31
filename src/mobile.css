@@ -494,133 +494,213 @@
         height: 200px;
     }
 
-    /* SPONSORS SECTION - Mobile Card Stack */
+    /* ==========================================
+       SPONSORS SECTION - Mobile Redesign (Page-based like Desktop)
+       ========================================== */
     .sponsors-section {
+        min-height: 100vh !important;
+        height: 100vh !important;
         padding: 0 !important;
         overflow: hidden !important;
     }
 
     .sponsors-container {
-        padding-top: 12vh !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        justify-content: flex-start !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
         align-items: center !important;
+        justify-content: center !important;
+        padding: 2rem 1rem !important;
+        position: relative !important;
     }
 
     .sponsors-header {
-        margin-bottom: 1rem !important;
-        padding-left: 1.5rem !important;
-        padding-right: 70px !important;
-        text-align: left !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
+        text-align: center;
+        margin-bottom: 2rem;
+        position: absolute;
+        top: 2rem;
+        left: 0;
+        right: 0;
+        z-index: 10;
     }
 
     .sponsors-header .section-title {
-        font-size: 1.8rem !important;
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+        margin-bottom: 0.5rem;
     }
 
+    /* Tier Section Wrapper - Show only active tier */
+    .tier-heading-wrapper {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin-top: 2rem;
+    }
+
+    .tier-heading {
+        font-size: clamp(1.1rem, 5vw, 1.5rem);
+        font-weight: 700;
+        letter-spacing: 3px;
+        padding: 0.8rem 2rem;
+        display: inline-block;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3));
+        border: 2px solid rgba(139, 92, 246, 0.6);
+        border-radius: 8px;
+        text-transform: uppercase;
+        color: #ffffff;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(139, 92, 246, 0.5);
+        text-align: left;
+    }
+
+    /* Card Container - Centered Layout */
     .cyber-stack-area {
         width: 100% !important;
-        height: auto !important;
-        min-height: 50vh !important;
+        height: 100% !important;
         display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
+        flex-direction: column !important;
         align-items: center !important;
-        padding: 1rem !important;
+        justify-content: center !important;
+        gap: 0 !important;
+        padding: 0 !important;
         position: relative !important;
+        overflow: visible !important;
+    }
+
+    /* Scrollable container for multiple cards (platinum/gold) - VERTICAL - MOBILE ONLY */
+    .sponsor-scroll-container {
+        width: 100% !important;
+        max-height: 60vh !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+        scrollbar-width: thin !important;
+        scrollbar-color: rgba(139, 92, 246, 0.5) rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .sponsor-scroll-container::-webkit-scrollbar {
+        width: 4px !important;
+    }
+
+    .sponsor-scroll-container::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2) !important;
+        border-radius: 2px !important;
+    }
+
+    .sponsor-scroll-container::-webkit-scrollbar-thumb {
+        background: rgba(139, 92, 246, 0.5) !important;
+        border-radius: 2px !important;
+    }
+
+    .sponsor-scroll-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(139, 92, 246, 0.7) !important;
+    }
+
+    /* Override GSAP positioning for mobile */
+    .cyber-card {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin: 0.5rem !important;
+        display: block !important;
+    }
+
+    /* Cards inside scroll container */
+    .sponsor-scroll-container .cyber-card {
+        margin: 0 !important;
+    }
+
+    /* Title Sponsor - Largest Card (Full Width) */
+    .cyber-card.cyber-title {
+        width: 90vw !important;
+        max-width: 400px !important;
+        aspect-ratio: 3/4 !important;
+    }
+
+    /* Co-Title Sponsor - Medium Cards (Reduced Size) */
+    .cyber-card.cyber-coTitle {
+        width: 70vw !important;
+        max-width: 280px !important;
+        aspect-ratio: 3/4 !important;
+    }
+
+    /* Diamond Sponsors - Medium Cards */
+    .cyber-card.cyber-diamond {
+        width: 42vw !important;
+        max-width: 180px !important;
+        aspect-ratio: 3/4 !important;
+        display: inline-block !important;
+        vertical-align: top !important;
+    }
+
+    /* Platinum Sponsors - Smaller Cards */
+    .cyber-card.cyber-platinum {
+        width: 38vw !important;
+        max-width: 160px !important;
+        aspect-ratio: 3/4 !important;
+        display: inline-block !important;
+        vertical-align: top !important;
+    }
+
+    /* Gold Sponsors - Smallest Cards */
+    .cyber-card.cyber-gold {
+        width: 35vw !important;
+        max-width: 150px !important;
+        aspect-ratio: 3/4 !important;
+        display: inline-block !important;
+        vertical-align: top !important;
+    }
+
+    /* Card Content Adjustments */
+    .cyber-card-footer {
+        padding: 0.5rem !important;
+    }
+
+    .cyber-card-text .cyber-title {
+        font-size: clamp(0.6rem, 2.5vw, 0.8rem) !important;
+        line-height: 1.3 !important;
+    }
+
+    .cyber-subtext {
+        font-size: clamp(0.45rem, 2vw, 0.6rem) !important;
+    }
+
+    .cyber-label {
+        font-size: clamp(0.5rem, 2vw, 0.65rem) !important;
+        padding: 3px 6px !important;
+        letter-spacing: 1px !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .cyber-dot {
+        width: 4px !important;
+        height: 4px !important;
+    }
+
+    /* HUD Progress - Hide on mobile */
+    .hud-progress {
+        display: none !important;
     }
 
     .card-stack {
         width: 260px;
         height: 340px;
         transform: scale(0.9);
-    }
-
-    /* Cyberpunk Card Stack - Mobile */
-    .cyber-card {
-        width: clamp(80px, 25vw, 120px) !important;
-        position: relative !important;
-        transform: none !important;
-        left: auto !important;
-        top: auto !important;
-        margin: clamp(0.25rem, 1vw, 0.75rem) !important;
-    }
-
-    .cyber-card.cyber-title {
-        width: clamp(140px, 45vw, 200px) !important;
-    }
-
-    .cyber-card.cyber-coTitle {
-        width: clamp(120px, 40vw, 180px) !important;
-    }
-
-    .cyber-card.cyber-diamond {
-        width: clamp(110px, 35vw, 160px) !important;
-    }
-
-    .cyber-card.cyber-platinum {
-        width: clamp(80px, 25vw, 120px) !important;
-    }
-
-    .cyber-card.cyber-gold {
-        width: clamp(80px, 25vw, 120px) !important;
-    }
-
-    .cyber-card-footer {
-        padding: 0 4px !important;
-        height: 15% !important;
-    }
-
-    .cyber-card-text .cyber-title {
-        font-size: 7px !important;
-        max-width: 60px !important;
-    }
-
-    .cyber-subtext {
-        font-size: 5px !important;
-    }
-
-    .cyber-dots {
-        gap: 2px !important;
-    }
-
-    .cyber-dot {
-        width: 3px !important;
-        height: 3px !important;
-    }
-
-    .cyber-label {
-        font-size: 6px !important;
-        padding: 1px 4px !important;
-    }
-
-    .cyber-card-image-wrapper {
-        bottom: 18% !important;
-    }
-
-    /* HUD Progress - Mobile Position */
-    .hud-progress {
-        left: 5px !important;
-        bottom: 10px !important;
-        font-size: 8px !important;
-        gap: 8px !important;
-    }
-
-    .phase-indicator {
-        width: 100px !important;
-        gap: 6px !important;
-    }
-
-    .phase-label {
-        font-size: 7px !important;
-        letter-spacing: 0.5px !important;
-    }
-
-    .phase-bar {
-        height: 3px !important;
     }
 
     /* HISTORY SECTION - Mobile Cards */
@@ -1357,40 +1437,74 @@
     /* ==========================================
        EXTRA SMALL - Sponsors Section
        ========================================== */
+    .sponsors-section {
+        padding: 0 !important;
+    }
+
+    .sponsors-container {
+        padding: 1.5rem 0.75rem !important;
+    }
+
+    .sponsors-header {
+        top: 1.5rem;
+    }
+
     .sponsors-header .section-title {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
     }
 
-    .cyber-card {
-        width: 80px !important;
+    .tier-heading {
+        font-size: 0.9rem !important;
+        padding: 0.6rem 1.2rem !important;
+        letter-spacing: 2.5px !important;
     }
 
-    .cyber-diamond {
-        width: 110px !important;
+    /* Smaller card sizes */
+    .cyber-card.cyber-title {
+        width: 85vw !important;
+        max-width: 320px !important;
     }
 
-    .cyber-platinum,
-    .cyber-gold {
-        width: 80px !important;
+    .cyber-card.cyber-coTitle {
+        width: 65vw !important;
+        max-width: 240px !important;
     }
 
-    .cyber-title {
-        font-size: 6px !important;
-        max-width: 50px !important;
+    .cyber-card.cyber-diamond {
+        width: 40vw !important;
+        max-width: 150px !important;
+    }
+
+    .cyber-card.cyber-platinum {
+        width: 36vw !important;
+        max-width: 140px !important;
+    }
+
+    .cyber-card.cyber-gold {
+        width: 33vw !important;
+        max-width: 130px !important;
+    }
+
+    .cyber-card-text .cyber-title {
+        font-size: 0.5rem !important;
     }
 
     .cyber-subtext {
-        font-size: 4px !important;
+        font-size: 0.38rem !important;
     }
 
     .cyber-label {
-        font-size: 5px !important;
-        padding: 1px 3px !important;
+        font-size: 0.45rem !important;
+        padding: 2px 4px !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+        background: rgba(0, 0, 0, 0.6) !important;
     }
 
-    /* Hide HUD progress on very small screens */
-    .hud-progress {
-        display: none !important;
+    .cyber-dot {
+        width: 3px !important;
+        height: 3px !important;
     }
 
     /* ==========================================
@@ -1471,18 +1585,6 @@
     }
 
     /* Cards - Extra Compact */
-    .cyber-card {
-        width: 100px;
-    }
-
-    .cyber-diamond {
-        width: 140px;
-    }
-
-    .cyber-title {
-        font-size: 7px;
-        max-width: 60px;
-    }
 
     .history-card {
         width: 90vw;
@@ -1664,11 +1766,12 @@
     }
 
     .cyber-card {
-        cursor: default;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
     }
 
-    .cyber-card:hover {
-        transform: translate(-50%, -50%);
+    .cyber-card:active {
+        transform: scale(0.98) !important;
     }
 
     .team-member:hover img {
@@ -1677,11 +1780,6 @@
 
     .team-member:hover .member-info {
         opacity: 0;
-    }
-
-    /* Active states for touch */
-    .cyber-card:active {
-        transform: translate(-50%, -50%) scale(1.05);
     }
 
     .social-icon:active {
@@ -1724,10 +1822,6 @@
     }
 
     .dolly-scroll-hint .arrow {
-        animation: none;
-    }
-
-    .cyber-dot.pulse {
         animation: none;
     }
 }
