@@ -511,8 +511,8 @@
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
-        padding: 2rem 1rem !important;
+        justify-content: flex-start !important;
+        padding: 0.5rem 1rem 2rem 1rem !important;
         position: relative !important;
     }
 
@@ -520,7 +520,7 @@
         text-align: center;
         margin-bottom: 2rem;
         position: absolute;
-        top: 2rem;
+        top: 0rem;
         left: 0;
         right: 0;
         z-index: 10;
@@ -529,25 +529,30 @@
     .sponsors-header .section-title {
         font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
         margin-bottom: 0.5rem;
+        margin-top: -1rem !important;
     }
 
     /* Tier Section Wrapper - Show only active tier */
     .tier-heading-wrapper {
         width: 100%;
-        text-align: left;
-        margin-bottom: 1.5rem;
-        position: relative;
+        text-align: center;
+        margin-bottom: 1rem;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        right: 0;
         display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
-        margin-top: 2rem;
+        z-index: 10;
+        padding: 0 1rem;
     }
 
     .tier-heading {
-        font-size: clamp(1.1rem, 5vw, 1.5rem);
+        font-size: clamp(0.9rem, 4vw, 1.3rem);
         font-weight: 700;
         letter-spacing: 3px;
-        padding: 0.8rem 2rem;
+        padding: 0.6rem 1.5rem;
         display: inline-block;
         background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3));
         border: 2px solid rgba(139, 92, 246, 0.6);
@@ -555,7 +560,7 @@
         text-transform: uppercase;
         color: #ffffff;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(139, 92, 246, 0.5);
-        text-align: left;
+        text-align: center;
     }
 
     /* Card Container - Centered Layout */
