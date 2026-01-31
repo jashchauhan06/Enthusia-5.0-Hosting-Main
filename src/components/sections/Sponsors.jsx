@@ -97,18 +97,7 @@ const CyberCard = React.forwardRef(({ item, tier }, ref) => {
     );
 });
 
-// --- Phase Indicator ---
-const PhaseIndicator = ({ label, color, active, progress }) => (
-    <div className="phase-indicator" style={{ opacity: active ? 1 : 0.3 }}>
-        <div className="phase-marker" />
-        <div className="phase-content">
-            <span className="phase-label">{label}</span>
-            <div className="phase-bar">
-                <div className={`phase-fill ${color}`} style={{ width: `${progress}%` }} />
-            </div>
-        </div>
-    </div>
-);
+
 
 // --- Main Sponsors Component ---
 const Sponsors = forwardRef((props, ref) => {
@@ -525,38 +514,7 @@ const Sponsors = forwardRef((props, ref) => {
                 </div>
 
                 {/* HUD Progress */}
-                <div className="hud-progress">
-                    <PhaseIndicator
-                        label="SECTOR: TITLE"
-                        color="title"
-                        active={currentPhase === 0}
-                        progress={currentPhase >= 0 ? 100 : 0}
-                    />
-                    <PhaseIndicator
-                        label="SECTOR: CO-TITLE"
-                        color="co-title"
-                        active={currentPhase === 1}
-                        progress={currentPhase >= 1 ? 100 : 0}
-                    />
-                    <PhaseIndicator
-                        label="SECTOR: DIAMOND"
-                        color="cyan"
-                        active={currentPhase === 2}
-                        progress={currentPhase >= 2 ? 100 : 0}
-                    />
-                    <PhaseIndicator
-                        label="SECTOR: PLATINUM"
-                        color="fuchsia"
-                        active={currentPhase === 3}
-                        progress={currentPhase >= 3 ? 100 : 0}
-                    />
-                    <PhaseIndicator
-                        label="SECTOR: GOLD"
-                        color="gold"
-                        active={currentPhase === 4}
-                        progress={currentPhase >= 4 ? 100 : 0}
-                    />
-                </div>
+
             </div>
         </section>
     );

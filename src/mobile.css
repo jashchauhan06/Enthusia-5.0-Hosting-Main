@@ -697,11 +697,6 @@
         height: 4px !important;
     }
 
-    /* HUD Progress - Hide on mobile */
-    .hud-progress {
-        display: none !important;
-    }
-
     .card-stack {
         width: 260px;
         height: 340px;
