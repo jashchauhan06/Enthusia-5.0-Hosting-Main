@@ -3,43 +3,52 @@ import { gsap } from 'gsap';
 
 // --- Sponsor Data by Tier ---
 const sponsorCategories = {
+    title: [
+        { id: '00', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=600" },
+    ],
+    coTitle: [
+        { id: '01', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=600" },
+        { id: '02', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=600" },
+    ],
     diamond: [
-        { id: '01', title: "Neural Link", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600" },
-        { id: '02', title: "Cyber Arm", image: "https://images.unsplash.com/photo-1592478411213-61535fdd861d?q=80&w=600" },
-        { id: '03', title: "Neon City", image: "https://images.unsplash.com/photo-1515630278258-407f66498911?q=80&w=600" },
+        { id: '03', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600" },
+        { id: '04', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600" },
+        { id: '05', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1515630278258-407f66498911?q=80&w=600" },
     ],
     platinum: [
-        { id: '06', title: "Bio Hack", image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=600" },
-        { id: '07', title: "Tech Wear", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600" },
-        { id: '08', title: "Night Raid", image: "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=600" },
-        { id: '09', title: "Droid", image: "https://images.unsplash.com/photo-1535378437327-b7107b7706ab?q=80&w=600" },
-        { id: '10', title: "Mainframe", image: "https://images.unsplash.com/photo-1544197150-b99a580bbcbf?q=80&w=600" },
+        { id: '06', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=600" },
+        { id: '07', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600" },
+        { id: '08', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=600" },
+        { id: '09', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1535378437327-b7107b7706ab?q=80&w=600" },
+        { id: '10', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600" },
     ],
     gold: [
-        { id: '11', title: "Waste Land", image: "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=600" },
-        { id: '12', title: "Scavenger", image: "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=600" },
-        { id: '13', title: "Old Tech", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600" },
-        { id: '14', title: "Wires", image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=600" },
-        { id: '15', title: "Glitch", image: "https://images.unsplash.com/photo-1515549832467-8783363e19b6?q=80&w=600" },
+        { id: '11', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=600" },
+        { id: '12', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=600" },
+        { id: '13', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600" },
+        { id: '14', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=600" },
+        { id: '15', title: "To be revealed soon", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600" },
     ]
 };
 
 // --- Helper: Horizontal Row Position Logic ---
 const getGridPosition = (index, total, cardSize = 160) => {
     // All cards in a single horizontal row
-    const gap = 30; // Increased gap slightly
+    const gap = 30;
     const totalWidth = total * cardSize + (total - 1) * gap;
     const startX = -totalWidth / 2 + cardSize / 2;
     // Offset by half of navbar width (~80px) to center in visible area
     const navbarOffset = 40;
     const xOffset = startX + index * (cardSize + gap) + navbarOffset;
 
-    return { x: xOffset, y: -30 }; // -30 to move up slightly
+    return { x: xOffset, y: 20 }; // Moved down to avoid heading overlap
 };
 
 // --- Cyberpunk Card Component ---
 const CyberCard = React.forwardRef(({ item, tier }, ref) => {
     const tierConfig = {
+        title: { colorClass: 'title', label: 'TITLE SPONSOR', subtext: 'CLASS_SS' },
+        coTitle: { colorClass: 'co-title', label: 'CO-TITLE', subtext: 'CLASS_S+' },
         diamond: { colorClass: 'cyan', label: 'DIAMOND', subtext: 'CLASS_S' },
         platinum: { colorClass: 'fuchsia', label: 'PLATINUM', subtext: 'CLASS_A' },
         gold: { colorClass: 'gold', label: 'GOLD', subtext: 'CLASS_B' }
@@ -102,33 +111,53 @@ const PhaseIndicator = ({ label, color, active, progress }) => (
 // --- Main Sponsors Component ---
 const Sponsors = forwardRef((props, ref) => {
     const sectionRef = useRef(null);
-    const cardsRef = useRef({ diamond: [], platinum: [], gold: [] });
-    const [currentPhase, setCurrentPhase] = useState(0); // 0=diamond, 1=platinum, 2=gold
+    const cardsRef = useRef({ title: [], coTitle: [], diamond: [], platinum: [], gold: [] });
+    const [currentPhase, setCurrentPhase] = useState(0); // 0=title, 1=coTitle, 2=diamond, 3=platinum, 4=gold
     const phaseRef = useRef(0);
     const animatingRef = useRef(false);
 
     // Expose API to ScrollController
     useImperativeHandle(ref, () => ({
         next: () => {
+            // Always block if animating
             if (animatingRef.current) return true;
-            if (phaseRef.current < 2) {
+            
+            // If we can advance, do it
+            if (phaseRef.current < 4) {
                 animateToPhase(phaseRef.current + 1);
                 return true; // Consumed
             }
-            return false; // Let dolly zoom handle section change
+            
+            // We're at the end, let section transition happen
+            return false;
         },
         prev: () => {
+            // Always block if animating
             if (animatingRef.current) return true;
+            
+            // If we can go back, do it
             if (phaseRef.current > 0) {
                 animateToPhase(phaseRef.current - 1);
                 return true; // Consumed
             }
-            return false; // Let dolly zoom handle section change
+            
+            // We're at the start, let section transition happen
+            return false;
         },
-        isFinished: () => phaseRef.current >= 2,
-        isAtStart: () => phaseRef.current <= 0,
+        isFinished: () => {
+            // Only finished if at last phase AND not animating
+            return phaseRef.current >= 4;
+        },
+        isAtStart: () => {
+            // Only at start if at first phase AND not animating
+            return phaseRef.current <= 0;
+        },
         reset: (fromTop) => {
-            phaseRef.current = fromTop ? 0 : 2;
+            // Kill any ongoing animations
+            gsap.killTweensOf(Object.values(cardsRef.current).flat());
+            animatingRef.current = false;
+            
+            phaseRef.current = fromTop ? 0 : 4;
             setCurrentPhase(phaseRef.current);
             resetCards(phaseRef.current);
         },
@@ -137,15 +166,17 @@ const Sponsors = forwardRef((props, ref) => {
     }));
 
     const resetCards = (phase) => {
-        const tiers = ['diamond', 'platinum', 'gold'];
+        const tiers = ['title', 'coTitle', 'diamond', 'platinum', 'gold'];
 
         tiers.forEach((tier, tierIdx) => {
             // Filter out nulls to get only active cards
             const cards = (cardsRef.current[tier] || []).filter(c => c);
             cards.forEach((card, i) => {
                 if (!card) return;
-                const isDiamond = tierIdx === 0;
-                const cardSize = isDiamond ? 240 : 160;
+            const isTitle = tierIdx === 0;
+                const isCoTitle = tierIdx === 1;
+                const isDiamond = tierIdx === 2;
+                const cardSize = isTitle ? 400 : isCoTitle ? 240 : isDiamond ? 190 : 160;
                 const pos = getGridPosition(i, cards.length, cardSize);
 
                 if (tierIdx === phase) {
@@ -173,11 +204,21 @@ const Sponsors = forwardRef((props, ref) => {
     };
 
     const animateToPhase = (newPhase) => {
-        if (animatingRef.current) return;
+        // Prevent double calls
+        if (animatingRef.current) {
+            return;
+        }
+        if (newPhase === phaseRef.current) {
+            return;
+        }
+        if (newPhase < 0 || newPhase > 4) {
+            return;
+        }
+        
         animatingRef.current = true;
 
         const oldPhase = phaseRef.current;
-        const tiers = ['diamond', 'platinum', 'gold'];
+        const tiers = ['title', 'coTitle', 'diamond', 'platinum', 'gold'];
         const oldTier = tiers[oldPhase];
         const newTier = tiers[newPhase];
 
@@ -186,9 +227,12 @@ const Sponsors = forwardRef((props, ref) => {
 
         const tl = gsap.timeline({
             onComplete: () => {
-                animatingRef.current = false;
                 phaseRef.current = newPhase;
                 setCurrentPhase(newPhase);
+                // Increased delay to ensure animation fully completes
+                setTimeout(() => {
+                    animatingRef.current = false;
+                }, 400);
             }
         });
 
@@ -201,7 +245,7 @@ const Sponsors = forwardRef((props, ref) => {
                 scale: newPhase > oldPhase ? 1.5 : 0.5,
                 y: direction * 200,
                 rotation: (i % 2 === 0 ? 1 : -1) * 30,
-                duration: 0.4,
+                duration: 0.5,
                 ease: 'power2.in'
             }, 0);
         });
@@ -209,8 +253,10 @@ const Sponsors = forwardRef((props, ref) => {
         // Animate in new cards
         newCards.forEach((card, i) => {
             if (!card) return;
-            const isDiamond = newPhase === 0;
-            const cardSize = isDiamond ? 240 : 160;
+            const isTitle = newPhase === 0;
+            const isCoTitle = newPhase === 1;
+            const isDiamond = newPhase === 2;
+            const cardSize = isTitle ? 400 : isCoTitle ? 240 : isDiamond ? 190 : 160;
             const pos = getGridPosition(i, newCards.length, cardSize);
             const direction = newPhase > oldPhase ? 1 : -1;
 
@@ -228,9 +274,9 @@ const Sponsors = forwardRef((props, ref) => {
                 scale: 1,
                 y: pos.y,
                 rotation: 0,
-                duration: 0.5,
+                duration: 0.6,
                 ease: 'back.out(1.2)'
-            }, 0.3 + i * 0.05);
+            }, 0.4 + i * 0.05);
         });
     };
 
@@ -249,6 +295,47 @@ const Sponsors = forwardRef((props, ref) => {
                 <div className="cyber-stack-area">
                     <div className="cyber-grid-bg" />
 
+                    {/* Title Sponsor Section with Heading */}
+                    {currentPhase === 0 && (
+                        <div className="tier-heading-wrapper">
+                            <h3 className="tier-heading title-tier">TITLE SPONSOR</h3>
+                        </div>
+                    )}
+
+                    {/* Title Sponsor Cards */}
+                    {sponsorCategories.title.map((item, i) => (
+                        <CyberCard
+                            key={`title-${item.id}`}
+                            ref={el => cardsRef.current.title[i] = el}
+                            item={item}
+                            tier="title"
+                        />
+                    ))}
+
+                    {/* Co-Title Sponsor Section with Heading */}
+                    {currentPhase === 1 && (
+                        <div className="tier-heading-wrapper">
+                            <h3 className="tier-heading co-title-tier">CO-TITLE SPONSOR</h3>
+                        </div>
+                    )}
+
+                    {/* Co-Title Sponsor Cards */}
+                    {sponsorCategories.coTitle.map((item, i) => (
+                        <CyberCard
+                            key={`coTitle-${item.id}`}
+                            ref={el => cardsRef.current.coTitle[i] = el}
+                            item={item}
+                            tier="coTitle"
+                        />
+                    ))}
+
+                    {/* Diamond Section with Heading */}
+                    {currentPhase === 2 && (
+                        <div className="tier-heading-wrapper">
+                            <h3 className="tier-heading diamond-tier">DIAMOND SPONSOR</h3>
+                        </div>
+                    )}
+
                     {/* Diamond Cards */}
                     {sponsorCategories.diamond.map((item, i) => (
                         <CyberCard
@@ -259,6 +346,13 @@ const Sponsors = forwardRef((props, ref) => {
                         />
                     ))}
 
+                    {/* Platinum Section with Heading */}
+                    {currentPhase === 3 && (
+                        <div className="tier-heading-wrapper">
+                            <h3 className="tier-heading platinum-tier">PLATINUM SPONSOR</h3>
+                        </div>
+                    )}
+
                     {/* Platinum Cards */}
                     {sponsorCategories.platinum.map((item, i) => (
                         <CyberCard
@@ -268,6 +362,13 @@ const Sponsors = forwardRef((props, ref) => {
                             tier="platinum"
                         />
                     ))}
+
+                    {/* Gold Section with Heading */}
+                    {currentPhase === 4 && (
+                        <div className="tier-heading-wrapper">
+                            <h3 className="tier-heading gold-tier">GOLD SPONSOR</h3>
+                        </div>
+                    )}
 
                     {/* Gold Cards */}
                     {sponsorCategories.gold.map((item, i) => (
@@ -283,22 +384,34 @@ const Sponsors = forwardRef((props, ref) => {
                 {/* HUD Progress */}
                 <div className="hud-progress">
                     <PhaseIndicator
-                        label="SECTOR: DIAMOND"
-                        color="cyan"
+                        label="SECTOR: TITLE"
+                        color="title"
                         active={currentPhase === 0}
                         progress={currentPhase >= 0 ? 100 : 0}
                     />
                     <PhaseIndicator
-                        label="SECTOR: PLATINUM"
-                        color="fuchsia"
+                        label="SECTOR: CO-TITLE"
+                        color="co-title"
                         active={currentPhase === 1}
                         progress={currentPhase >= 1 ? 100 : 0}
                     />
                     <PhaseIndicator
-                        label="SECTOR: GOLD"
-                        color="gold"
+                        label="SECTOR: DIAMOND"
+                        color="cyan"
                         active={currentPhase === 2}
                         progress={currentPhase >= 2 ? 100 : 0}
+                    />
+                    <PhaseIndicator
+                        label="SECTOR: PLATINUM"
+                        color="fuchsia"
+                        active={currentPhase === 3}
+                        progress={currentPhase >= 3 ? 100 : 0}
+                    />
+                    <PhaseIndicator
+                        label="SECTOR: GOLD"
+                        color="gold"
+                        active={currentPhase === 4}
+                        progress={currentPhase >= 4 ? 100 : 0}
                     />
                 </div>
             </div>

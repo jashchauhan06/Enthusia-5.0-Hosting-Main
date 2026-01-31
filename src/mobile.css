@@ -549,15 +549,23 @@
         margin: clamp(0.25rem, 1vw, 0.75rem) !important;
     }
 
-    .cyber-diamond {
+    .cyber-card.cyber-title {
+        width: clamp(140px, 45vw, 200px) !important;
+    }
+
+    .cyber-card.cyber-coTitle {
+        width: clamp(120px, 40vw, 180px) !important;
+    }
+
+    .cyber-card.cyber-diamond {
         width: clamp(110px, 35vw, 160px) !important;
     }
 
-    .cyber-platinum {
+    .cyber-card.cyber-platinum {
         width: clamp(80px, 25vw, 120px) !important;
     }
 
-    .cyber-gold {
+    .cyber-card.cyber-gold {
         width: clamp(80px, 25vw, 120px) !important;
     }
 
@@ -566,7 +574,7 @@
         height: 15% !important;
     }
 
-    .cyber-title {
+    .cyber-card-text .cyber-title {
         font-size: 7px !important;
         max-width: 60px !important;
     }

@@ -6,7 +6,7 @@ import TechFestIntro from './sections/TechFestIntro';
 import TechFestEvents from './sections/TechFestEvents';
 import CulturalFest from './sections/CulturalFest';
 import CulturalEvents from './sections/CulturalEvents';
-// import Sponsors from './sections/Sponsors'; // Commented out for now
+import Sponsors from './sections/Sponsors';
 import History from './sections/History';
 import Team from './sections/Team';
 import Countdown from './sections/Countdown';
@@ -21,7 +21,7 @@ const ScrollController = () => {
         { id: 'techfest-events', Comp: TechFestEvents },
         { id: 'cultural', Comp: CulturalFest },
         { id: 'cultural-events', Comp: CulturalEvents },
-        // { id: 'sponsors', Comp: Sponsors }, // Commented out for now
+        { id: 'sponsors', Comp: Sponsors },
         { id: 'history', Comp: History },
         { id: 'team', Comp: Team },
         { id: 'countdown', Comp: Countdown },

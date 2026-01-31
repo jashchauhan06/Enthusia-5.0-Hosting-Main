@@ -284,6 +284,88 @@
             justify-content: center;
         }
 
+        /* Tier Heading Styles */
+        .tier-heading-wrapper {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .tier-heading {
+            font-family: 'Orbitron', var(--font-heading), sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0;
+            padding: 0.75rem 1.5rem;
+            background: rgba(10, 10, 20, 0.8);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+        }
+
+        .tier-heading.title-tier {
+            background: linear-gradient(135deg, #FFFFFF 0%, #E0E0E0 50%, #FFFFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+        }
+
+        .tier-heading.co-title-tier {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .tier-heading.diamond-tier {
+            background: linear-gradient(135deg, #00FFFF 0%, #00CED1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-color: rgba(0, 255, 255, 0.6);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .tier-heading.platinum-tier {
+            background: linear-gradient(135deg, #E0B0FF 0%, #DA70D6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-color: rgba(218, 112, 214, 0.6);
+            box-shadow: 0 0 30px rgba(218, 112, 214, 0.3);
+        }
+
+        .tier-heading.gold-tier {
+            background: linear-gradient(135deg, #FFD700 0%, #DAA520 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
         .cyber-card-perspective {
             position: absolute;
             top: 50%;
@@ -292,23 +374,51 @@
             perspective: 1000px;
         }
 
-        .cyber-card {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            width: 160px;
-            height: auto;
-            aspect-ratio: 3/4;
-            background: #0d0d0d;
-            border: 2px solid transparent;
-            transform-style: preserve-3d;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        /* Cyber Card Base - Desktop Only */
+        @media (min-width: 992px) {
+            .cyber-card {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                width: 160px !important;
+                height: auto;
+                aspect-ratio: 3/4;
+                background: #0d0d0d;
+                border: 2px solid transparent;
+                transform-style: preserve-3d;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+                transition: box-shadow 0.3s ease, transform 0.3s ease;
+            }
+
+            /* Title Sponsor - Largest */
+            .cyber-card.cyber-title {
+                width: 250px !important;
+            }
+
+            /* Co-Title Sponsor - Second Largest */
+            .cyber-card.cyber-coTitle {
+                width: 240px !important;
+            }
+
+            /* Diamond - Third Largest */
+            .cyber-card.cyber-diamond {
+                width: 190px !important;
+            }
+
+            /* Platinum - Default size */
+            .cyber-card.cyber-platinum {
+                width: 160px !important;
+            }
+
+            /* Gold - Default size */
+            .cyber-card.cyber-gold {
+                width: 160px !important;
+            }
         }
 
         .cyber-card:hover {
@@ -511,18 +621,20 @@
             margin-bottom: 2px;
         }
 
-        .cyber-title {
+        .cyber-card-text .cyber-title {
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: #fff;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            max-width: 100px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            max-width: none;
+            overflow: visible;
+            text-overflow: clip;
+            white-space: normal;
+            word-wrap: break-word;
             margin: 0;
+            line-height: 1.2;
         }
 
         /* Tech Dots */
