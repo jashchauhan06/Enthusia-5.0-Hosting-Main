@@ -110,9 +110,9 @@ const Sponsors = forwardRef((props, ref) => {
     const scrolledToEndRef = useRef(false);
     const isMobile = window.innerWidth <= 991; // Detect mobile
 
-    // Check if current tier needs scrolling (platinum or gold)
+    // Check if current tier needs scrolling (diamond, coTitle, platinum or gold)
     const needsScrolling = (phase) => {
-        return isMobile && (phase === 3 || phase === 4); // platinum or gold
+        return isMobile && (phase === 1 || phase === 2 || phase === 3 || phase === 4); // coTitle, diamond, platinum or gold
     };
 
     // Check if scrolled to end (vertical)
@@ -434,26 +434,58 @@ const Sponsors = forwardRef((props, ref) => {
 
                     {/* Co-Title Sponsor Section */}
                     <div style={{ display: currentPhase === 1 ? 'contents' : 'none' }}>
-                        {sponsorCategories.coTitle.map((item, i) => (
-                            <CyberCard
-                                key={`coTitle-${item.id}`}
-                                ref={el => cardsRef.current.coTitle[i] = el}
-                                item={item}
-                                tier="coTitle"
-                            />
-                        ))}
+                        {isMobile ? (
+                            <div className="sponsor-scroll-container" ref={scrollContainerRef}>
+                                {sponsorCategories.coTitle.map((item, i) => (
+                                    <div key={`coTitle-wrapper-${item.id}`}>
+                                        <CyberCard
+                                            ref={el => cardsRef.current.coTitle[i] = el}
+                                            item={item}
+                                            tier="coTitle"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <>
+                                {sponsorCategories.coTitle.map((item, i) => (
+                                    <CyberCard
+                                        key={`coTitle-${item.id}`}
+                                        ref={el => cardsRef.current.coTitle[i] = el}
+                                        item={item}
+                                        tier="coTitle"
+                                    />
+                                ))}
+                            </>
+                        )}
                     </div>
 
                     {/* Diamond Sponsor Section */}
                     <div style={{ display: currentPhase === 2 ? 'contents' : 'none' }}>
-                        {sponsorCategories.diamond.map((item, i) => (
-                            <CyberCard
-                                key={`diamond-${item.id}`}
-                                ref={el => cardsRef.current.diamond[i] = el}
-                                item={item}
-                                tier="diamond"
-                            />
-                        ))}
+                        {isMobile ? (
+                            <div className="sponsor-scroll-container" ref={scrollContainerRef}>
+                                {sponsorCategories.diamond.map((item, i) => (
+                                    <div key={`diamond-wrapper-${item.id}`}>
+                                        <CyberCard
+                                            ref={el => cardsRef.current.diamond[i] = el}
+                                            item={item}
+                                            tier="diamond"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <>
+                                {sponsorCategories.diamond.map((item, i) => (
+                                    <CyberCard
+                                        key={`diamond-${item.id}`}
+                                        ref={el => cardsRef.current.diamond[i] = el}
+                                        item={item}
+                                        tier="diamond"
+                                    />
+                                ))}
+                            </>
+                        )}
                     </div>
 
                     {/* Platinum Sponsor Section */}
