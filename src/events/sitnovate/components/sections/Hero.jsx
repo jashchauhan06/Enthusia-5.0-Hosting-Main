@@ -9,17 +9,17 @@ const Hero = () => {
         // Set target date to 3 days from now
         const targetDate = new Date();
         targetDate.setDate(targetDate.getDate() + 3);
-        
+
         const updateTimer = () => {
             const now = new Date().getTime();
             const distance = targetDate.getTime() - now;
-            
+
             if (distance > 0) {
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
+
                 setTimeLeft(`${days}d ${hours}h ${minutes}m ${seconds}s`);
             } else {
                 setTimeLeft('Registration Open!');
@@ -28,7 +28,7 @@ const Hero = () => {
 
         updateTimer();
         const interval = setInterval(updateTimer, 1000);
-        
+
         return () => clearInterval(interval);
     }, []);
     return (
@@ -76,7 +76,7 @@ const Hero = () => {
                 >
                     {/* Register Now Button */}
                     <a
-                        href="https://unstop.com/o/wKj1oqk?lb=i9smS0vw&utm_medium=Share&utm_source=harshkum8980&utm_campaign=Online_coding_challenge"
+                        href="https://unstop.com/p/sitnovate-20-enthusia-50-symbiosis-institute-of-technology-nagpur-1635270"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="relative px-6 md:px-10 py-3 md:py-4 overflow-hidden bg-[#d4af37] hover:bg-[#c49d2f] border-2 border-[#d4af37] text-black font-cinzel tracking-[0.2em] font-bold uppercase text-sm md:text-base inline-block transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105"

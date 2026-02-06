@@ -188,10 +188,10 @@ const SITankDesktop = () => {
                   <div className="relative z-10">
                     <h3 className="text-2xl font-bold text-[#d4b483] mb-4 uppercase tracking-wider font-mono border-b-2 border-[#d4b483] pb-3 flex items-center gap-3">
                       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z"/>
-                        <path d="M14 2v6h6" fill="none" stroke="currentColor" strokeWidth="2"/>
-                        <rect x="8" y="12" width="8" height="2" fill="#120f0d"/>
-                        <rect x="8" y="16" width="8" height="2" fill="#120f0d"/>
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z" />
+                        <path d="M14 2v6h6" fill="none" stroke="currentColor" strokeWidth="2" />
+                        <rect x="8" y="12" width="8" height="2" fill="#120f0d" />
+                        <rect x="8" y="16" width="8" height="2" fill="#120f0d" />
                       </svg>
                       Pitch Deck Presentation Template
                     </h3>
@@ -208,7 +208,7 @@ const SITankDesktop = () => {
                           className="group flex items-center gap-3 text-[#a89070] hover:text-[#d4b483] transition-all duration-300 font-mono text-base leading-relaxed p-3 bg-[#2c241b] rounded border border-[#5c4d3c] hover:border-[#d4b483] hover:shadow-[4px_4px_0px_rgba(212,180,131,0.3)]"
                         >
                           <svg className="w-6 h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                           </svg>
                           <span className="flex-1">View Template</span>
                           <span className="text-[#d4b483] group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -220,7 +220,7 @@ const SITankDesktop = () => {
                           className="group flex items-center gap-3 text-[#a89070] hover:text-[#d4b483] transition-all duration-300 font-mono text-base leading-relaxed p-3 bg-[#2c241b] rounded border border-[#5c4d3c] hover:border-[#d4b483] hover:shadow-[4px_4px_0px_rgba(212,180,131,0.3)]"
                         >
                           <svg className="w-6 h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
                           </svg>
                           <span className="flex-1">Download Template</span>
                           <span className="text-[#d4b483] group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -260,10 +260,10 @@ const SITankDesktop = () => {
                   <div className="relative z-10">
                     <h3 className="text-2xl font-bold text-[#d4b483] mb-4 uppercase tracking-wider font-mono border-b-2 border-[#d4b483] pb-3 flex items-center gap-3">
                       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z"/>
-                        <path d="M14 2v6h6" fill="none" stroke="currentColor" strokeWidth="2"/>
-                        <rect x="8" y="12" width="8" height="2" fill="#120f0d"/>
-                        <rect x="8" y="16" width="8" height="2" fill="#120f0d"/>
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z" />
+                        <path d="M14 2v6h6" fill="none" stroke="currentColor" strokeWidth="2" />
+                        <rect x="8" y="12" width="8" height="2" fill="#120f0d" />
+                        <rect x="8" y="16" width="8" height="2" fill="#120f0d" />
                       </svg>
                       Problem Statements
                     </h3>
@@ -286,7 +286,7 @@ const SITankDesktop = () => {
                   </div>
                 </div>
                 <button
-                  onClick={() => window.open("https://unstop.com/p/the-boardroom-battle-enthusia-50-symbiosis-institute-of-technology-nagpur-1632127", "_blank")}
+
                   className="w-full px-6 py-3 bg-[#d4b483] text-[#120f0d] font-mono font-bold uppercase tracking-widest hover:bg-[#c2a270] transition-all duration-300 border-2 border-[#d4b483] shadow-[4px_4px_0px_rgba(0,0,0,0.8)] hover:shadow-[2px_2px_0px_rgba(0,0,0,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] whitespace-nowrap"
                 >
                   Register Now
@@ -777,10 +777,10 @@ const SITankMobile = () => {
                   <div className="relative z-10">
                     <h4 className="text-lg font-bold text-[#d4b483] mb-3 uppercase tracking-wider font-mono border-b-2 border-[#d4b483] pb-2 flex items-center gap-2">
                       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z"/>
-                        <path d="M14 2v6h6" fill="none" stroke="currentColor" strokeWidth="2"/>
-                        <rect x="8" y="12" width="8" height="2" fill="#120f0d"/>
-                        <rect x="8" y="16" width="8" height="2" fill="#120f0d"/>
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z" />
+                        <path d="M14 2v6h6" fill="none" stroke="currentColor" strokeWidth="2" />
+                        <rect x="8" y="12" width="8" height="2" fill="#120f0d" />
+                        <rect x="8" y="16" width="8" height="2" fill="#120f0d" />
                       </svg>
                       Pitch Template
                     </h4>
@@ -797,7 +797,7 @@ const SITankMobile = () => {
                           className="group flex items-center gap-2 text-[#a89070] hover:text-[#d4b483] transition-all duration-300 font-mono text-sm leading-relaxed p-2 bg-[#2c241b] rounded border border-[#5c4d3c] hover:border-[#d4b483] hover:shadow-[3px_3px_0px_rgba(212,180,131,0.3)]"
                         >
                           <svg className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                           </svg>
                           <span className="flex-1">View Template</span>
                           <span className="text-[#d4b483] group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -809,7 +809,7 @@ const SITankMobile = () => {
                           className="group flex items-center gap-2 text-[#a89070] hover:text-[#d4b483] transition-all duration-300 font-mono text-sm leading-relaxed p-2 bg-[#2c241b] rounded border border-[#5c4d3c] hover:border-[#d4b483] hover:shadow-[3px_3px_0px_rgba(212,180,131,0.3)]"
                         >
                           <svg className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
                           </svg>
                           <span className="flex-1">Download</span>
                           <span className="text-[#d4b483] group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -847,10 +847,10 @@ const SITankMobile = () => {
                   <div className="relative z-10">
                     <h4 className="text-lg font-bold text-[#d4b483] mb-3 uppercase tracking-wider font-mono border-b-2 border-[#d4b483] pb-2 flex items-center gap-2">
                       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z"/>
-                        <path d="M14 2v6h6" fill="none" stroke="currentColor" strokeWidth="2"/>
-                        <rect x="8" y="12" width="8" height="2" fill="#120f0d"/>
-                        <rect x="8" y="16" width="8" height="2" fill="#120f0d"/>
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z" />
+                        <path d="M14 2v6h6" fill="none" stroke="currentColor" strokeWidth="2" />
+                        <rect x="8" y="12" width="8" height="2" fill="#120f0d" />
+                        <rect x="8" y="16" width="8" height="2" fill="#120f0d" />
                       </svg>
                       Problem Statements
                     </h4>
@@ -866,7 +866,7 @@ const SITankMobile = () => {
                         className="group flex items-center gap-2 text-[#a89070] hover:text-[#d4b483] transition-all duration-300 font-mono text-sm leading-relaxed p-2 bg-[#2c241b] rounded border border-[#5c4d3c] hover:border-[#d4b483] hover:shadow-[3px_3px_0px_rgba(212,180,131,0.3)]"
                       >
                         <svg className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                          <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
                         </svg>
                         <span className="flex-1">Download Statements</span>
                         <span className="text-[#d4b483] group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -876,7 +876,7 @@ const SITankMobile = () => {
                 </div>
 
                 <button
-                  onClick={() => window.open("https://unstop.com/p/the-boardroom-battle-enthusia-50-symbiosis-institute-of-technology-nagpur-1632127", "_blank")}
+
                   className="w-full px-6 py-3 bg-[#d4b483] text-[#120f0d] font-mono font-bold uppercase tracking-widest hover:bg-[#c2a270] transition-all border-2 border-[#d4b483] shadow-[4px_4px_0px_rgba(0,0,0,0.8)]"
                 >
                   Register Now
