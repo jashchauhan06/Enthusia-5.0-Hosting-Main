@@ -93,10 +93,7 @@ export default function EventWrapper({ src, title, bgColor = '#050505', allowScr
             inset: 0,
             backgroundColor: bgColor,
             zIndex: 9999,
-            overflow: allowScroll ? 'auto' : 'hidden',
-            // Hide scrollbar but allow scrolling
-            scrollbarWidth: 'none', // Firefox
-            msOverflowStyle: 'none', // IE and Edge
+            overflow: 'hidden',
         }}>
             {/* Hide scrollbar for webkit browsers */}
             <style dangerouslySetInnerHTML={{
@@ -146,7 +143,7 @@ export default function EventWrapper({ src, title, bgColor = '#050505', allowScr
                     }
                 `
             }} />
-            
+
             {/* Skeleton Loader */}
             {isLoading && (
                 <div className="skeleton-loader">
@@ -154,7 +151,7 @@ export default function EventWrapper({ src, title, bgColor = '#050505', allowScr
                     <div className="skeleton-item skeleton-content"></div>
                 </div>
             )}
-            
+
             {/* Back Button */}
             <button
                 onClick={handleBack}

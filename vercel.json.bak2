@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "source": "/sitank-app/(.*)",
+            "destination": "/sitank-app/$1"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
+}

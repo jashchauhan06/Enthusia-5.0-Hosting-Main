@@ -2,13 +2,55 @@
   RewriteEngine On
   RewriteBase /
 
-  # BuildBrand: serve directly, bypass React
-  RewriteCond %{REQUEST_URI} ^/buildbrand
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^buildbrand/(.*)$ /buildbrand/index.html [L]
+  # Disable directory listing
+  Options -Indexes
 
-  # React: everything else
+  # ----------------------------------------------------------------------
+  # SUB-APPLICATIONS ROUTING
+  # ----------------------------------------------------------------------
+
+  # SITank App
+  RewriteCond %{REQUEST_URI} ^/sitank-app
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+  RewriteRule ^sitank-app/(.*)$ /sitank-app/index.html [L]
+
+  # Esports App
+  RewriteCond %{REQUEST_URI} ^/esports-app
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^esports-app/(.*)$ /esports-app/index.html [L]
+
+  # CodeSprint App
+  RewriteCond %{REQUEST_URI} ^/codesprint-app
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^codesprint-app/(.*)$ /codesprint-app/index.html [L]
+
+  # SitNovate App
+  RewriteCond %{REQUEST_URI} ^/sitnovate-app
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^sitnovate-app/(.*)$ /sitnovate-app/index.html [L]
+
+  # StrangerTech App
+  RewriteCond %{REQUEST_URI} ^/strangertech-app
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^strangertech-app/(.*)$ /strangertech-app/index.html [L]
+
+  # BuildBrand App
+  RewriteCond %{REQUEST_URI} ^/buildbrand-app
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^buildbrand-app/(.*)$ /buildbrand-app/index.html [L]
+
+  # ----------------------------------------------------------------------
+  # MAIN APPLICATION ROUTING
+  # ----------------------------------------------------------------------
+  
+  # Redirect /sitank-app (without trailing slash or file) to correct path if needed
+  # Or simply let the main app handle anything else
+
+  # If the requested filename exists, serve it
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Otherwise, fallback to main app index.html
+  RewriteRule ^ index.html [L]
 </IfModule>

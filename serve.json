@@ -1,0 +1,82 @@
+{
+    "cleanUrls": true,
+    "trailingSlash": true,
+    "rewrites": [
+        {
+            "source": "/sitank-app",
+            "destination": "/dist/sitank-app/index.html"
+        },
+        {
+            "source": "/sitank-app/**",
+            "destination": "/dist/sitank-app/index.html"
+        },
+        {
+            "source": "/esports-app",
+            "destination": "/dist/esports-app/index.html"
+        },
+        {
+            "source": "/esports-app/**",
+            "destination": "/dist/esports-app/index.html"
+        },
+        {
+            "source": "/codesprint-app",
+            "destination": "/dist/codesprint-app/index.html"
+        },
+        {
+            "source": "/codesprint-app/**",
+            "destination": "/dist/codesprint-app/index.html"
+        },
+        {
+            "source": "/sitnovate-app",
+            "destination": "/dist/sitnovate-app/index.html"
+        },
+        {
+            "source": "/sitnovate-app/**",
+            "destination": "/dist/sitnovate-app/index.html"
+        },
+        {
+            "source": "/strangertech-app",
+            "destination": "/dist/strangertech-app/index.html"
+        },
+        {
+            "source": "/strangertech-app/**",
+            "destination": "/dist/strangertech-app/index.html"
+        },
+        {
+            "source": "/buildbrand-app",
+            "destination": "/dist/buildbrand-app/index.html"
+        },
+        {
+            "source": "/buildbrand-app/**",
+            "destination": "/dist/buildbrand-app/index.html"
+        },
+        {
+            "source": "/sitank",
+            "destination": "/dist/index.html"
+        },
+        {
+            "source": "/esports",
+            "destination": "/dist/index.html"
+        },
+        {
+            "source": "/codesprint",
+            "destination": "/dist/index.html"
+        },
+        {
+            "source": "/sitnovate",
+            "destination": "/dist/index.html"
+        },
+        {
+            "source": "/strangertech",
+            "destination": "/dist/index.html"
+        },
+        {
+            "source": "/buildbrand",
+            "destination": "/dist/index.html"
+        },
+        {
+            "source": "/**",
+            "destination": "/dist/index.html"
+        }
+    ]
+}
