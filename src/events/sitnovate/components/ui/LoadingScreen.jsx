@@ -20,7 +20,7 @@ const LoadingScreen = ({ onLoadComplete }) => {
         '/assets/images/Team/ParthChoudhari.jpeg',
         '/assets/images/Team/PrathmeshRaipurkar.jpeg',
         '/assets/images/Team/Jash.jpg',
-        '/assets/images/sponsors/ATC.jpeg',
+        '/assets/images/sponsors/fueler_logo.webp',
         '/assets/images/sponsors/Insterra.webp',
         '/assets/images/sponsors/MIA.png'
     ];

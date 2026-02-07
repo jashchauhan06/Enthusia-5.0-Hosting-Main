@@ -58,7 +58,7 @@ const Icons = {
             <path d="M12 6v2M10 9h4" strokeLinecap="round"/>
         </svg>
     ),
-    swag: (
+    Swags: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
             <path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7" strokeLinecap="round"/>
             <path d="M12 3l8 6H4l8-6z" strokeLinecap="round" strokeLinejoin="round"/>
@@ -236,8 +236,8 @@ const WhatWeProvide = () => {
             items: [
                 { icon: Icons.powerBackup, text: "Power Backup" },
                 { icon: Icons.internet, text: "High-Speed Internet" },
-                { icon: Icons.labs, text: "Smart Labs" },
-                { icon: Icons.zones, text: "Hackathon Zones" }
+                { icon: Icons.labs, text: "Collaborative Workspaces" },
+                { icon: Icons.zones, text: "Hackathon Zones & Relaxation Areas" }
             ]
         },
         {
@@ -247,7 +247,7 @@ const WhatWeProvide = () => {
                 { icon: Icons.cashPrize, text: "Cash Prizes" },
                 { icon: Icons.certificate, text: "Certificates" },
                 { icon: Icons.mentors, text: "Industry Mentors" },
-                { icon: Icons.swag, text: "Swag" }
+                { icon: Icons.Swags, text: "Swags" }
             ]
         }
     ];

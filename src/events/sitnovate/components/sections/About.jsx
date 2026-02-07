@@ -126,15 +126,15 @@ export default function About() {
                             <div className="bg-black/40 border border-[#d4af37]/20 rounded-lg p-4 md:p-6 break-words">
                                 <h3 className="text-[#d4af37] font-cinzel text-base md:text-xl mb-3 tracking-wide break-words">Round 1: Online Screening</h3>
                                 <p className="text-sm md:text-base mb-2 break-words"><span className="text-[#ffecb3]">Platform:</span> Unstop (Online)</p>
-                                <p className="text-sm md:text-base mb-2 break-words"><span className="text-[#ffecb3]">Submissions:</span> Solution PPT + 5-min video covering problem understanding, proposed solution, system architecture, and innovation</p>
+                                <p className="text-sm md:text-base mb-2 break-words"><span className="text-[#ffecb3]">Submissions:</span> Submit a solution document covering the problem understanding, proposed solution, system architecture, and innovation.</p>
                                 <p className="text-sm md:text-base break-words"><span className="text-[#ffecb3]">Outcome:</span> Top 60 teams advance to the final on-campus round</p>
                             </div>
 
                             {/* Final Round */}
                             <div className="bg-black/40 border border-[#d4af37]/20 rounded-lg p-4 md:p-6 break-words">
                                 <h3 className="text-[#d4af37] font-cinzel text-base md:text-xl mb-3 tracking-wide break-words">Final Round: 24-Hour On-Campus Hackathon</h3>
-                                <p className="text-sm md:text-base mb-2 break-words"><span className="text-[#ffecb3]">Venue:</span> SIT Nagpur | <span className="text-[#ffecb3]">Duration:</span> 24 hours | <span className="text-[#ffecb3]">Fee:</span> ₹590/team</p>
-                                <p className="text-sm md:text-base mb-2 break-words"><span className="text-[#ffecb3]">Presentation:</span> 10-min demo + 5-min Q&A</p>
+                                <p className="text-sm md:text-base mb-2 break-words"><span className="text-[#ffecb3]">Venue:</span> SIT Nagpur | <span className="text-[#ffecb3]">Duration:</span> 24 hours | <span className="text-[#ffecb3]">Fee:</span> ₹500/team</p>
+                                <p className="text-sm md:text-base mb-2 break-words"><span className="text-[#ffecb3]">Evaluation:</span> Evaluation process</p>
                                 <p className="text-sm md:text-base mb-2 break-words"><span className="text-[#ffecb3]">Prizes:</span> ₹70,000+ (1st: ₹40,000 | 2nd: ₹20,000 | 3rd: ₹10,000)</p>
                                 <p className="text-sm md:text-base break-words"><span className="text-[#ffecb3]">Teams:</span> Exactly 3 members (UG students, inter-college allowed)</p>
                             </div>

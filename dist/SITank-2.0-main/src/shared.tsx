@@ -54,14 +54,14 @@ export const SmartImage = ({
           `}</style>
         </div>
       )}
-      
+
       {/* Error state with retry button */}
       {error && (
         <div className="absolute inset-0 bg-[#2c241b] flex flex-col items-center justify-center text-[#d4b483] z-20">
           <div className="text-center p-4">
             <div className="text-2xl mb-2">📷</div>
             <div className="text-xs font-mono mb-2">Image failed to load</div>
-            <button 
+            <button
               onClick={() => {
                 setError(false);
                 setRetryCount(0);
@@ -74,7 +74,7 @@ export const SmartImage = ({
           </div>
         </div>
       )}
-      
+
       {/* 90s TV Scanline Effect Overlay - disabled for performance in marquee */}
       {!disableEffects && (
         <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-20 bg-[length:100%_2px,3px_100%] pointer-events-none mix-blend-overlay"></div>
@@ -85,9 +85,8 @@ export const SmartImage = ({
         alt={alt}
         onLoad={() => setLoaded(true)}
         onError={handleError}
-        className={`w-full h-full ${disableEffects ? "" : "sepia-[.3] contrast-125 hover:sepia-0"} ${
-          fit === "contain" ? "object-contain p-2" : "object-cover"
-        } ${loaded ? "opacity-100 transition-opacity duration-500" : "opacity-0"}`}
+        className={`w-full h-full ${disableEffects ? "" : "sepia-[.3] contrast-125 hover:sepia-0"} ${fit === "contain" ? "object-contain p-2" : "object-cover"
+          } ${loaded ? "opacity-100 transition-opacity duration-500" : "opacity-0"}`}
         loading="lazy"
       />
       {!disableEffects && (
@@ -111,70 +110,72 @@ export const STUDENT_DATA = [
   {
     name: "Sunidhi Haware",
     role: "President (SRC)",
-    image: "/images/team/Sunidhi.webp",
+    image: "./images/team/Sunidhi.webp",
     email: "haware.vijaykumar.btech2023@sitnagpur.siu.edu.in",
   },
   {
     name: "Prathmesh Raipurkar",
     role: "Vice President (SRC)",
-    image: "/images/team/Prathmesh.webp",
+    image: "./images/team/Prathmesh.webp",
     email: "prathmesh.raipurkar.batch2024@sitnagpur.siu.edu.in",
   },
   {
     name: "Harsh Kumar",
     role: "Sponsorship",
-    image: "/images/team/harsh.webp",
+    image: "./images/team/harsh.webp",
     email: "harsh.kumar.batch2024@sitnagpur.siu.edu.in",
   },
   {
     name: "Jash Chauhan",
     role: "Web Development Team Lead",
-    image: "/images/team/Jash.webp",
+    image: "./images/team/Jash.webp",
     email: "jash.chauhan.batch2024@sitnagpur.siu.edu.in",
   },
-  { name: "Soumya Mishra", 
-    role: "Web Developer", 
-    image: "/images/team/Soumya.webp",
+  {
+    name: "Soumya Mishra",
+    role: "Web Developer",
+    image: "./images/team/Soumya.webp",
     email: "soumya.mishra.batch2025@sitnagpur.siu.edu.in",
   },
   {
     name: "Krutik Gajbhiye",
     role: "Event Coordinator",
-    image: "/images/team/Krutik Gajbhiye.webp",
+    image: "./images/team/Krutik Gajbhiye.webp",
     phone: "+91 99602 25056",
     email: "krutik.gajbhiye.btech2023@sitnagpur.siu.edu.in",
   },
   {
     name: "Tanay Kothari",
     role: "Event Coordinator",
-    image: "/images/team/Tanay Kothari.webp",
+    image: "./images/team/Tanay Kothari.webp",
     phone: "+91 99755 78363",
     email: "tanay.kothari.btech2023@sitnagpur.siu.edu.in",
   },
-  { name: "Ojas Charjan", 
-    role: "Event Coordinator", 
-    image: "/images/team/Ojas.webp",
+  {
+    name: "Ojas Charjan",
+    role: "Event Coordinator",
+    image: "./images/team/Ojas.webp",
     phone: "+91 95293 19989",
     email: "charjan.abhijit.btech2023@sitnagpur.siu.edu.in",
   },
   {
     name: "Kunjal Pise",
     role: "Event Coordinator",
-    image: "/images/team/Kunjal Pise.webp",
+    image: "./images/team/Kunjal Pise.webp",
     phone: "+91 77097 28775",
     email: "kunjal.pise.btech2023@sitnagpur.siu.edu.in",
   },
   {
     name: "Varun Mundhada",
     role: "Event Coordinator",
-    image: "/images/team/Varun Mundhada.webp",
+    image: "./images/team/Varun Mundhada.webp",
     phone: "+91 93473 55900",
     email: "vaun.mundhada.btech2023@sitnagpur.siu.edu.in",
   },
   {
     name: "Parth Tiwaskar",
     role: "Event Coordinator",
-    image: "/images/team/Parth Tiwaskar.webp",
+    image: "./images/team/Parth Tiwaskar.webp",
     phone: "+91 9112374118",
     email: "parth.tiwaskar.batch2024@sitnagpur.siu.edu.in",
   },
@@ -185,28 +186,28 @@ export const JURY_DATA = [
     name: "Mr. Amit Badiyani",
     title: "founder and Managing Director of Harrier Information Systems",
     bio: "Amit Arvind Badiyani is the Founder and Managing Director of Harrier Information Systems, a Nagpur‑headquartered IT services company focused on digital transformation for global financial‑services and healthcare clients. A seasoned technology entrepreneur, he specializes in building high‑performing teams and mission‑critical software products with expertise in cloud analytics.",
-    image: "/images/jury/Amit Badiyani.webp",
+    image: "./images/jury/Amit Badiyani.webp",
     linkedin: "https://www.linkedin.com/in/amitbadiyani/",
   },
   {
     name: "Mr. Abhay Deshmukh",
     title: "Director Incubein Foundation",
     bio: "Abhay Deshmukh is an Assistant Professor at Nagpur University with a strong research background in advanced energy-storage materials and polymer nanocomposites. He is a co‑inventor on multiple patents related to asymmetric supercapacitor devices and microwave treatment of polymer and polymer/CNT nano‑composites, reflecting his expertise in cutting‑edge materials science and device engineering.",
-    image: "/images/jury/Abhay Deshmukh.webp",
+    image: "./images/jury/Abhay Deshmukh.webp",
     linkedin: "https://www.linkedin.com/in/abhaydeshmukh/",
   },
   {
     name: "Mr. Rohit Chinchanikar",
     title: "Founder & CEO Vardistore",
     bio: "Rohit Chinchanikar is the founder of Vardi Store, India’s first military upcycling brand that transforms decommissioned defence uniforms into sustainable fashion and everyday products. With a background in impact‑driven businesses, he uses Vardi to blend patriotism, circular design, and support for veterans, and has showcased the brand’s purpose‑led story on platforms such as “Pitch to Get Rich.”",
-    image: "/images/jury/Rohit Chinchanikar.webp",
+    image: "./images/jury/Rohit Chinchanikar.webp",
     linkedin: "https://www.linkedin.com/in/rohit-chinchanikar-a7b3a0158/",
   },
   {
     name: "Mr. Akash Singh",
     title: "Vice President – Product Strategy and Growth at Pragmatyc",
     bio: "Akash Singh is the Vice President – Product Strategy and Growth at Pragmatyc, he leads initiatives at the intersection of product innovation, market strategy, and scalable growth. With over 16 years of experience across education, research, and policy analysis, he has helped build and scale EdTech platforms and content-driven startups in India.",
-    image: "/images/jury/Akash Singh.webp",
+    image: "./images/jury/Akash Singh.webp",
     linkedin: "https://www.linkedin.com/in/aakash-singh-58479b96/",
   },
 ];
@@ -251,7 +252,7 @@ export const HeroVideoBackground = () => (
     <div
       className="w-full h-full bg-cover bg-center bg-no-repeat scale-105"
       style={{
-        backgroundImage: "url('/images/bg.webp')",
+        backgroundImage: "url('./images/bg.webp')",
         filter: "grayscale(100%) sepia(80%) contrast(1.2) brightness(0.6)",
       }}
     ></div>
@@ -293,10 +294,10 @@ export const MarketWatchSection = () => {
             className="relative"
           >
             <div className="relative w-[280px] h-[200px] md:w-[600px] md:h-[400px] bg-[#1a1612] p-2 shadow-[20px_20px_0px_rgba(0,0,0,0.5)] border border-[#5c4d3c] transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-              <SmartImage 
-                src="/images/about_photo.webp" 
-                alt="SITank Event" 
-                fit="cover" 
+              <SmartImage
+                src="./images/about_photo.webp"
+                alt="SITank Event"
+                fit="cover"
                 className="w-full h-full"
               />
               <div className="absolute top-4 left-4 flex items-center gap-2 bg-red-600 px-3 py-1 text-white font-mono text-xs font-bold animate-pulse shadow-lg">
@@ -438,7 +439,7 @@ export const PosterSection = () => (
           Official Poster
         </div>
         <SmartImage
-          src="/images/sitank/poster.webp"
+          src="./images/sitank/poster.webp"
           alt="SITank 2.0 Poster"
           fit="contain"
           className="w-full"

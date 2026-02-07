@@ -6,14 +6,14 @@ import ImageSkeleton from '../ui/ImageSkeleton';
 // --- Sponsors Content ---
 const Sponsors = () => {
     const sponsors = [
-        { name: "All That's Coffee", src: "/assets/images/sponsors/ATC.jpeg" },
-        { name: "Insterra", src: "/assets/images/sponsors/Insterra.webp" },
-        { name: "MIA", src: "/assets/images/sponsors/MIA.png" },
-        { name: "PB Creators", src: "/assets/images/sponsors/PB.png" },
-        { name: "Devfolio", src: "/assets/images/sponsors/dev.png" },
-        { name: "ETHIndia", src: "/assets/images/sponsors/eth.png" },
-        { name: "Pizza Hut", src: "/assets/images/sponsors/pizzahut.png" },
-        { name: "Polygon", src: "/assets/images/sponsors/poly.png" },
+        { name: "Fueler", src: "/assets/images/sponsors/fueler_logo.webp" },
+        { name: "CodeCrafter", src: "/assets/images/sponsors/codecrafter_logo.webp" },
+        { name: "Interview Buddy", src: "/assets/images/sponsors/interview_buddy.webp" },
+        { name: "FLATLOGIC", src: "/assets/images/sponsors/FLATLOGIC.webp" },
+        // { name: "Devfolio", src: "/assets/images/sponsors/dev.png" },
+        // { name: "ETHIndia", src: "/assets/images/sponsors/eth.png" },
+        // { name: "Pizza Hut", src: "/assets/images/sponsors/pizzahut.png" },
+        // { name: "Polygon", src: "/assets/images/sponsors/poly.png" },
         { name: "Unstoppable Domains", src: "/assets/images/sponsors/un.png" },
     ];
     // Note: Re-verify image mapping, using user provided filenames.
@@ -50,7 +50,7 @@ const Sponsors = () => {
                     <div className="flex items-center justify-center gap-4 md:gap-8">
                         <div className="h-px w-8 md:w-24 bg-gradient-to-r from-transparent to-[#d4af37] opacity-50"></div>
                         <h2 className="text-2xl md:text-6xl font-cinzel text-[#d4af37] tracking-[0.2em] font-bold drop-shadow-[0_0_15px_rgba(212,175,55,0.4)] uppercase">
-                            Past Sponsors
+                            Our Sponsors
                         </h2>
                         <div className="h-px w-8 md:w-24 bg-gradient-to-l from-transparent to-[#d4af37] opacity-50"></div>
                     </div>
@@ -61,30 +61,9 @@ const Sponsors = () => {
                     {/* First Row - 5 sponsors */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-8 mb-4 md:mb-8">
                         {sponsors.slice(0, 5).map((sponsor, index) => (
-                            <div
-                                key={index}
-                                className="glass-card aspect-[4/3] md:aspect-[3/2] rounded-xl flex items-center justify-center p-4 md:p-8 transition-all duration-500 hover:-translate-y-2 group cursor-pointer relative overflow-hidden animate-fade-in-up"
-                            >
-                                {/* Inner Glow */}
-                                <div className="absolute inset-0 bg-radial-gradient from-[#d4af37]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                                <ImageSkeleton
-                                    src={sponsor.src}
-                                    alt={sponsor.name}
-                                    className="w-full h-full object-contain opacity-90 contrast-110 group-hover:opacity-100 group-hover:brightness-110 group-hover:scale-105 transition-all duration-500 relative z-10"
-                                    skeletonClassName="rounded-lg"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                    
-                    {/* Second Row - 4 sponsors centered */}
-                    <div className="flex justify-center">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl">
-                            {sponsors.slice(5).map((sponsor, index) => (
+                            <div key={index} className="flex flex-col items-center gap-2">
                                 <div
-                                    key={index + 5}
-                                    className="glass-card aspect-[4/3] md:aspect-[3/2] rounded-xl flex items-center justify-center p-4 md:p-8 transition-all duration-500 hover:-translate-y-2 group cursor-pointer relative overflow-hidden animate-fade-in-up"
+                                    className="glass-card aspect-[4/3] md:aspect-[3/2] rounded-xl flex items-center justify-center p-4 md:p-8 transition-all duration-500 hover:-translate-y-2 group cursor-pointer relative overflow-hidden animate-fade-in-up w-full"
                                 >
                                     {/* Inner Glow */}
                                     <div className="absolute inset-0 bg-radial-gradient from-[#d4af37]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -95,6 +74,31 @@ const Sponsors = () => {
                                         className="w-full h-full object-contain opacity-90 contrast-110 group-hover:opacity-100 group-hover:brightness-110 group-hover:scale-105 transition-all duration-500 relative z-10"
                                         skeletonClassName="rounded-lg"
                                     />
+                                </div>
+                                <p className="text-[#d4af37] font-cinzel text-xs md:text-sm text-center">{sponsor.name}</p>
+                            </div>
+                        ))}
+                    </div>
+                    
+                    {/* Second Row - 4 sponsors centered */}
+                    <div className="flex justify-center">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl">
+                            {sponsors.slice(5).map((sponsor, index) => (
+                                <div key={index + 5} className="flex flex-col items-center gap-2">
+                                    <div
+                                        className="glass-card aspect-[4/3] md:aspect-[3/2] rounded-xl flex items-center justify-center p-4 md:p-8 transition-all duration-500 hover:-translate-y-2 group cursor-pointer relative overflow-hidden animate-fade-in-up w-full"
+                                    >
+                                        {/* Inner Glow */}
+                                        <div className="absolute inset-0 bg-radial-gradient from-[#d4af37]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                                        <ImageSkeleton
+                                            src={sponsor.src}
+                                            alt={sponsor.name}
+                                            className="w-full h-full object-contain opacity-90 contrast-110 group-hover:opacity-100 group-hover:brightness-110 group-hover:scale-105 transition-all duration-500 relative z-10"
+                                            skeletonClassName="rounded-lg"
+                                        />
+                                    </div>
+                                    <p className="text-[#d4af37] font-cinzel text-xs md:text-sm text-center">{sponsor.name}</p>
                                 </div>
                             ))}
                         </div>

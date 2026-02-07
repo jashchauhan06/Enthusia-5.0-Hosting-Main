@@ -307,7 +307,7 @@ const SITankDesktop = () => {
               <div className="bg-[#1a1612] p-8 border-2 border-[#d4b483] shadow-[8px_8px_0px_#2c241b] relative group hover:shadow-[12px_12px_0px_#2c241b] hover:-translate-y-1 transition-all duration-300">
                 <div className="aspect-video bg-[#2c241b] border border-[#5c4d3c] flex items-center justify-center mb-4">
                   <SmartImage
-                    src="/images/sponsor/Harrier.webp"
+                    src="./images/sponsor/Harrier.webp"
                     alt="Harrier Information Systems"
                     fit="contain"
                     className="w-full h-full p-4"
@@ -320,7 +320,7 @@ const SITankDesktop = () => {
               <div className="bg-[#1a1612] p-8 border-2 border-[#d4b483] shadow-[8px_8px_0px_#2c241b] relative group hover:shadow-[12px_12px_0px_#2c241b] hover:-translate-y-1 transition-all duration-300">
                 <div className="aspect-video bg-[#2c241b] border border-[#5c4d3c] flex items-center justify-center mb-4">
                   <SmartImage
-                    src="/images/sponsor/Incubein Foundation.webp"
+                    src="./images/sponsor/Incubein Foundation.webp"
                     alt="INCUBEIN FOUNDATION"
                     fit="contain"
                     className="w-full h-full p-4"
@@ -333,7 +333,7 @@ const SITankDesktop = () => {
               <div className="bg-[#1a1612] p-8 border-2 border-[#d4b483] shadow-[8px_8px_0px_#2c241b] relative group hover:shadow-[12px_12px_0px_#2c241b] hover:-translate-y-1 transition-all duration-300">
                 <div className="aspect-video bg-[#2c241b] border border-[#5c4d3c] flex items-center justify-center mb-4">
                   <SmartImage
-                    src="/images/sponsor/insterra.webp"
+                    src="./images/sponsor/insterra.webp"
                     alt="Pragmatyc Pvt. Ltd."
                     fit="contain"
                     className="w-full h-full p-4"
@@ -369,7 +369,7 @@ const SITankDesktop = () => {
                   >
                     <div className="h-full w-full relative overflow-hidden bg-[#2c241b] border border-[#5c4d3c]">
                       <img
-                        src={`/images/sitank/${img.index}.${img.ext}`}
+                        src={`./images/sitank/${img.index}.${img.ext}`}
                         alt={`Event Highlight ${img.index}`}
                         className="w-full h-full object-cover"
                         loading="lazy"
@@ -682,7 +682,7 @@ const SITankMobile = () => {
                   >
                     <div className="h-full w-full bg-[#2c241b] border border-[#5c4d3c] relative overflow-hidden">
                       <img
-                        src={`/images/sitank/${img.index}.${img.ext}`}
+                        src={`./images/sitank/${img.index}.${img.ext}`}
                         alt={`Event Highlight ${img.index}`}
                         className="w-full h-full object-cover"
                         loading="lazy"
@@ -894,19 +894,19 @@ const SITankMobile = () => {
             <div className="space-y-6">
               <div className="bg-[#1a1612] p-6 border-2 border-[#d4b483] shadow-[6px_6px_0px_#2c241b]">
                 <div className="aspect-video bg-[#2c241b] border border-[#5c4d3c] flex items-center justify-center mb-3">
-                  <SmartImage src="/images/sponsor/Harrier.webp" alt="Harrier Information Systems" fit="contain" className="w-full h-full p-4" />
+                  <SmartImage src="./images/sponsor/Harrier.webp" alt="Harrier Information Systems" fit="contain" className="w-full h-full p-4" />
                 </div>
                 <h3 className="text-base font-bold text-[#d4b483] text-center font-mono">Harrier Information Systems<br />Pvt. Ltd.</h3>
               </div>
               <div className="bg-[#1a1612] p-6 border-2 border-[#d4b483] shadow-[6px_6px_0px_#2c241b]">
                 <div className="aspect-video bg-[#2c241b] border border-[#5c4d3c] flex items-center justify-center mb-3">
-                  <SmartImage src="/images/sponsor/Incubein Foundation.webp" alt="INCUBEIN FOUNDATION" fit="contain" className="w-full h-full p-4" />
+                  <SmartImage src="./images/sponsor/Incubein Foundation.webp" alt="INCUBEIN FOUNDATION" fit="contain" className="w-full h-full p-4" />
                 </div>
                 <h3 className="text-base font-bold text-[#d4b483] text-center font-mono">INCUBEIN FOUNDATION</h3>
               </div>
               <div className="bg-[#1a1612] p-6 border-2 border-[#d4b483] shadow-[6px_6px_0px_#2c241b]">
                 <div className="aspect-video bg-[#2c241b] border border-[#5c4d3c] flex items-center justify-center mb-3">
-                  <SmartImage src="/images/sponsor/insterra.webp" alt="Insterra by Pragmatyc Global Pvt. Ltd." fit="contain" className="w-full h-full p-4" />
+                  <SmartImage src="./images/sponsor/insterra.webp" alt="Insterra by Pragmatyc Global Pvt. Ltd." fit="contain" className="w-full h-full p-4" />
                 </div>
                 <h3 className="text-base font-bold text-[#d4b483] text-center font-mono">Insterra by Pragmatyc Global Pvt. Ltd.</h3>
               </div>
