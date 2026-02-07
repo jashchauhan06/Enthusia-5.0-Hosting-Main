@@ -61,9 +61,30 @@ const Sponsors = () => {
                     {/* First Row - 5 sponsors */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-8 mb-4 md:mb-8">
                         {sponsors.slice(0, 5).map((sponsor, index) => (
-                            <div key={index} className="flex flex-col items-center gap-2">
+                            <div
+                                key={index}
+                                className="glass-card aspect-[4/3] md:aspect-[3/2] rounded-xl flex items-center justify-center p-4 md:p-8 transition-all duration-500 hover:-translate-y-2 group cursor-pointer relative overflow-hidden animate-fade-in-up"
+                            >
+                                {/* Inner Glow */}
+                                <div className="absolute inset-0 bg-radial-gradient from-[#d4af37]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                                <ImageSkeleton
+                                    src={sponsor.src}
+                                    alt={sponsor.name}
+                                    className="w-full h-full object-contain opacity-90 contrast-110 group-hover:opacity-100 group-hover:brightness-110 group-hover:scale-105 transition-all duration-500 relative z-10"
+                                    skeletonClassName="rounded-lg"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                    
+                    {/* Second Row - 4 sponsors centered */}
+                    <div className="flex justify-center">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl">
+                            {sponsors.slice(5).map((sponsor, index) => (
                                 <div
-                                    className="glass-card aspect-[4/3] md:aspect-[3/2] rounded-xl flex items-center justify-center p-4 md:p-8 transition-all duration-500 hover:-translate-y-2 group cursor-pointer relative overflow-hidden animate-fade-in-up w-full"
+                                    key={index + 5}
+                                    className="glass-card aspect-[4/3] md:aspect-[3/2] rounded-xl flex items-center justify-center p-4 md:p-8 transition-all duration-500 hover:-translate-y-2 group cursor-pointer relative overflow-hidden animate-fade-in-up"
                                 >
                                     {/* Inner Glow */}
                                     <div className="absolute inset-0 bg-radial-gradient from-[#d4af37]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -75,41 +96,16 @@ const Sponsors = () => {
                                         skeletonClassName="rounded-lg"
                                     />
                                 </div>
-                                <p className="text-[#d4af37] font-cinzel text-xs md:text-sm text-center">{sponsor.name}</p>
-                            </div>
-                        ))}
-                    </div>
-                    
-                    {/* Second Row - 4 sponsors centered */}
-                    <div className="flex justify-center">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl">
-                            {sponsors.slice(5).map((sponsor, index) => (
-                                <div key={index + 5} className="flex flex-col items-center gap-2">
-                                    <div
-                                        className="glass-card aspect-[4/3] md:aspect-[3/2] rounded-xl flex items-center justify-center p-4 md:p-8 transition-all duration-500 hover:-translate-y-2 group cursor-pointer relative overflow-hidden animate-fade-in-up w-full"
-                                    >
-                                        {/* Inner Glow */}
-                                        <div className="absolute inset-0 bg-radial-gradient from-[#d4af37]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                                        <ImageSkeleton
-                                            src={sponsor.src}
-                                            alt={sponsor.name}
-                                            className="w-full h-full object-contain opacity-90 contrast-110 group-hover:opacity-100 group-hover:brightness-110 group-hover:scale-105 transition-all duration-500 relative z-10"
-                                            skeletonClassName="rounded-lg"
-                                        />
-                                    </div>
-                                    <p className="text-[#d4af37] font-cinzel text-xs md:text-sm text-center">{sponsor.name}</p>
-                                </div>
                             ))}
                         </div>
                     </div>
                 </div>
 
                 {/* Sponsor CTA */}
-                <div className="mt-12 md:mt-16 flex flex-col items-center animate-pulse-slow">
+                {/* <div className="mt-12 md:mt-16 flex flex-col items-center animate-pulse-slow">
                     <p className="text-[#a0a0a0] font-cinzel text-[10px] md:text-base tracking-widest opacity-80 text-center uppercase px-4">Interested in Sponsoring SITNovate 2.0 (2026)?</p>
                     <p className="text-[#d4af37] font-cinzel text-sm md:text-lg tracking-wider mt-4">Contact us for sponsorship opportunities</p>
-                </div>
+                </div> */}
 
             </div>
 
