@@ -7,14 +7,15 @@ import ImageSkeleton from '../ui/ImageSkeleton';
 const Sponsors = () => {
     const sponsors = [
         { name: "Fueler", src: "/assets/images/sponsors/fueler_logo.webp" },
-        { name: "CodeCrafter", src: "/assets/images/sponsors/codecrafter_logo.webp" },
+        { name: "CodeCrafter", src: "/assets/images/sponsors/codecrafter.svg" },
         { name: "Interview Buddy", src: "/assets/images/sponsors/interview_buddy.webp" },
         { name: "FLATLOGIC", src: "/assets/images/sponsors/FLATLOGIC.webp" },
         // { name: "Devfolio", src: "/assets/images/sponsors/dev.png" },
         // { name: "ETHIndia", src: "/assets/images/sponsors/eth.png" },
         // { name: "Pizza Hut", src: "/assets/images/sponsors/pizzahut.png" },
         // { name: "Polygon", src: "/assets/images/sponsors/poly.png" },
-        { name: "Unstoppable Domains", src: "/assets/images/sponsors/un.png" },
+        { name: "Unstop", src: "/assets/images/sponsors/unstop.webp" },
+        { name: "Navan", src: "/assets/images/sponsors/navan.webp" },
     ];
     // Note: Re-verify image mapping, using user provided filenames.
 
@@ -77,7 +78,7 @@ const Sponsors = () => {
                             </div>
                         ))}
                     </div>
-                    
+
                     {/* Second Row - 4 sponsors centered */}
                     <div className="flex justify-center">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl">
