@@ -1,40 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stranger Tech - The Upside Down Challenge</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e50914'>N</text></svg>">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stranger Tech - The Upside Down Challenge</title>
 
-    <!-- DNS Prefetch for external resources -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://fonts.cdnfonts.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e50914'>N</text></svg>">
 
-    <!-- Preconnect for faster font loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+  <!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://fonts.cdnfonts.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&family=Orbitron:wght@400;700&family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    
-    <!-- Inline critical CSS -->
-    <style>
-      body {
-        margin: 0;
-        background: #0a0a0a;
-        color: #fff;
-        overflow-x: hidden;
-      }
-    </style>
-    <script type="module" crossorigin src="/strangertech-app/assets/index-DJcGL3Vx.js"></script>
-    <link rel="stylesheet" crossorigin href="/strangertech-app/assets/index-BeR5vbdi.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+  <!-- Preconnect for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&family=Orbitron:wght@400;700&family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Inline critical CSS -->
+  <style>
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+  </style>
+  <script type="module" crossorigin src="/strangertech-app/assets/index-DJcGL3Vx.js"></script>
+  <link rel="stylesheet" crossorigin href="/strangertech-app/assets/index-BeR5vbdi.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    // Wait for the page to load and add click handler to Register Now button
+    document.addEventListener('DOMContentLoaded', function () {
+      // Use MutationObserver to wait for the button to be rendered by React
+      const observer = new MutationObserver(function (mutations) {
+        const registerButtons = document.querySelectorAll('button, a');
+        registerButtons.forEach(function (btn) {
+          if (btn.textContent && btn.textContent.trim().toUpperCase() === 'REGISTER NOW') {
+            btn.style.cursor = 'pointer';
+            btn.onclick = function (e) {
+              e.preventDefault();
+              window.open('https://www.commudle.com/communities/stranger-tech/events/stranger-tech', '_blank');
+            };
+          }
+        });
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+
+      // Also check immediately and periodically
+      setTimeout(function () {
+        const registerButtons = document.querySelectorAll('button, a');
+        registerButtons.forEach(function (btn) {
+          if (btn.textContent && btn.textContent.trim().toUpperCase() === 'REGISTER NOW') {
+            btn.style.cursor = 'pointer';
+            btn.onclick = function (e) {
+              e.preventDefault();
+              window.open('https://www.commudle.com/communities/stranger-tech/events/stranger-tech', '_blank');
+            };
+          }
+        });
+      }, 2000);
+    });
+  </script>
+</body>
+
 </html>
