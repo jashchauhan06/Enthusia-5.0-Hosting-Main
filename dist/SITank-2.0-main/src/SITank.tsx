@@ -230,12 +230,14 @@ const SITankDesktop = () => {
                   </div>
                 </div>
 
-                <button
-                  onClick={() => window.open("https://unstop.com/p/the-dalal-street-enthusia-50-symbiosis-institute-of-technology-nagpur-1633407", "_blank")}
-                  className="w-full px-6 py-3 bg-[#d4b483] text-[#120f0d] font-mono font-bold uppercase tracking-widest hover:bg-[#c2a270] transition-all duration-300 border-2 border-[#d4b483] shadow-[4px_4px_0px_rgba(0,0,0,0.8)] hover:shadow-[2px_2px_0px_rgba(0,0,0,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] whitespace-nowrap"
+                <a
+                  href="https://unstop.com/p/the-dalal-street-enthusia-50-symbiosis-institute-of-technology-nagpur-1633407"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-6 py-3 bg-[#d4b483] text-[#120f0d] font-mono font-bold uppercase tracking-widest hover:bg-[#c2a270] transition-all duration-300 border-2 border-[#d4b483] shadow-[4px_4px_0px_rgba(0,0,0,0.8)] hover:shadow-[2px_2px_0px_rgba(0,0,0,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] whitespace-nowrap inline-block text-center"
                 >
                   Register Now
-                </button>
+                </a>
               </div>
               <div className="bg-[#1a1612] p-10 border border-[#5c4d3c] shadow-[10px_10px_0px_#2c241b] relative flex flex-col">
                 <h2 className="text-3xl font-bold mb-2 text-[#d4b483] uppercase tracking-widest border-b border-[#5c4d3c] pb-4 whitespace-nowrap">
@@ -285,12 +287,14 @@ const SITankDesktop = () => {
                     </div>
                   </div>
                 </div>
-                <button
-
-                  className="w-full px-6 py-3 bg-[#d4b483] text-[#120f0d] font-mono font-bold uppercase tracking-widest hover:bg-[#c2a270] transition-all duration-300 border-2 border-[#d4b483] shadow-[4px_4px_0px_rgba(0,0,0,0.8)] hover:shadow-[2px_2px_0px_rgba(0,0,0,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] whitespace-nowrap"
+                <a
+                  href="https://unstop.com/competitions/the-boardroom-battle-enthusia-50-symbiosis-institute-of-technology-nagpur-1632127"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-6 py-3 bg-[#d4b483] text-[#120f0d] font-mono font-bold uppercase tracking-widest hover:bg-[#c2a270] transition-all duration-300 border-2 border-[#d4b483] shadow-[4px_4px_0px_rgba(0,0,0,0.8)] hover:shadow-[2px_2px_0px_rgba(0,0,0,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] whitespace-nowrap inline-block text-center"
                 >
                   Register Now
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -819,12 +823,14 @@ const SITankMobile = () => {
                   </div>
                 </div>
 
-                <button
-                  onClick={() => window.open("https://unstop.com/p/the-dalal-street-enthusia-50-symbiosis-institute-of-technology-nagpur-1633407", "_blank")}
-                  className="w-full px-6 py-3 bg-[#d4b483] text-[#120f0d] font-mono font-bold uppercase tracking-widest hover:bg-[#c2a270] transition-all border-2 border-[#d4b483] shadow-[4px_4px_0px_rgba(0,0,0,0.8)]"
+                <a
+                  href="https://unstop.com/p/the-dalal-street-enthusia-50-symbiosis-institute-of-technology-nagpur-1633407"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-6 py-3 bg-[#d4b483] text-[#120f0d] font-mono font-bold uppercase tracking-widest hover:bg-[#c2a270] transition-all border-2 border-[#d4b483] shadow-[4px_4px_0px_rgba(0,0,0,0.8)] inline-block text-center"
                 >
                   Register Now
-                </button>
+                </a>
               </div>
 
               <div className="bg-[#1a1612] p-6 border border-[#5c4d3c] shadow-[8px_8px_0px_#2c241b]">
@@ -875,12 +881,14 @@ const SITankMobile = () => {
                   </div>
                 </div>
 
-                <button
-
-                  className="w-full px-6 py-3 bg-[#d4b483] text-[#120f0d] font-mono font-bold uppercase tracking-widest hover:bg-[#c2a270] transition-all border-2 border-[#d4b483] shadow-[4px_4px_0px_rgba(0,0,0,0.8)]"
+                <a
+                  href="https://unstop.com/competitions/the-boardroom-battle-enthusia-50-symbiosis-institute-of-technology-nagpur-1632127"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-6 py-3 bg-[#d4b483] text-[#120f0d] font-mono font-bold uppercase tracking-widest hover:bg-[#c2a270] transition-all border-2 border-[#d4b483] shadow-[4px_4px_0px_rgba(0,0,0,0.8)] inline-block text-center"
                 >
                   Register Now
-                </button>
+                </a>
               </div>
             </div>
           </div>
