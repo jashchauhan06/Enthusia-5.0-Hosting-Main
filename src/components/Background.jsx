@@ -1,21 +1,13 @@
-
 import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
 
 const Background = ({ images, isLoaded }) => {
     const canvasRef = useRef(null);
     const frameIndexRef = useRef(0);
-    const lastFrameRef = useRef(-1);
     const animationFrameRef = useRef(null);
 
     // Configuration - optimized with fewer images
     const frameCount = 48; // Using every 10th frame (480/10)
     const normalSpeed = 0.15; // Adjusted speed for fewer frames
-
-    // We might need to expose a way to affect speed via scroll, 
-    // but for now let's implement the base loop.
-    // In original: frameIndex += normalSpeed + activeScrollSpeed;
-    // We'll stick to normalSpeed for now, can add scroll connection later via context or ref.
 
     const activeScrollSpeedRef = useRef(0);
     const scrollSensitivity = 3; // Balanced sensitivity
@@ -39,12 +31,15 @@ const Background = ({ images, isLoaded }) => {
         if (!isLoaded || !images.length) return;
 
         const canvas = canvasRef.current;
-        const context = canvas.getContext('2d');
+        const context = canvas.getContext('2d', { alpha: false }); // Optimization: disable alpha channel for canvas itself
 
         const resizeCanvas = () => {
             if (!canvas) return;
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            // Limit pixel ratio to 1.5 max for performance on high-DPI screens
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+            canvas.width = window.innerWidth * dpr;
+            canvas.height = window.innerHeight * dpr;
+            context.scale(dpr, dpr);
         };
 
         window.addEventListener('resize', resizeCanvas);
@@ -58,32 +53,55 @@ const Background = ({ images, isLoaded }) => {
             const step = normalSpeed + activeScrollSpeedRef.current;
             frameIndexRef.current += step;
 
-            // Wrap logic
-            if (frameIndexRef.current >= frameCount) frameIndexRef.current = 0;
-            else if (frameIndexRef.current < 0) frameIndexRef.current = frameCount - 1;
+            // Wrap logic for infinite loop
+            if (frameIndexRef.current >= frameCount) frameIndexRef.current %= frameCount;
+            if (frameIndexRef.current < 0) frameIndexRef.current = (frameIndexRef.current % frameCount) + frameCount;
 
-            // Display
-            // frameIndexRef is 0-based index for images array directly?
-            // In App.jsx: loadList[i-1] = img. (Count 1 to 481).
-            // So images[0] is frame 1.
-            let imgIndex = Math.floor(frameIndexRef.current);
+            // DISPLAY LOGIC: Cross-fade Interpolation
+            // 1. Calculate indices for the two frames to blend
+            const currentFrameFloat = frameIndexRef.current;
+            let frameIndex1 = Math.floor(currentFrameFloat);
+            let frameIndex2 = (frameIndex1 + 1) % frameCount;
+            const blendFactor = currentFrameFloat - frameIndex1; // 0.0 to 1.0
 
-            // Safety wrap for array access
-            if (imgIndex >= images.length) imgIndex = 0;
-            if (imgIndex < 0) imgIndex = images.length - 1;
+            // Safety check for array bounds
+            if (frameIndex1 >= images.length) frameIndex1 = 0;
+            if (frameIndex2 >= images.length) frameIndex2 = 0;
 
-            const img = images[imgIndex];
+            const img1 = images[frameIndex1];
+            const img2 = images[frameIndex2];
 
-            // Only redraw if frame changed (performance optimization)
-            if (img && img.complete && canvas && imgIndex !== lastFrameRef.current) {
-                lastFrameRef.current = imgIndex;
-                const ratio = Math.max(canvas.width / img.width, canvas.height / img.height);
-                const centerShift_x = (canvas.width - img.width * ratio) / 2;
-                const centerShift_y = (canvas.height - img.height * ratio) / 2;
+            if (canvas && img1 && img1.complete && img2 && img2.complete) {
+                // Calculate cover dimensions (centered) based on logical size (innerWidth/Height)
+                // We draw relative to logical coordinates; context.scale handles the DPR resolution
+                const canvasWidth = window.innerWidth;
+                const canvasHeight = window.innerHeight;
 
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                context.drawImage(img, 0, 0, img.width, img.height,
-                    centerShift_x, centerShift_y, img.width * ratio, img.height * ratio);
+                // Use img1 aspect ratio (assuming all images same size)
+                const imgRatio = img1.width / img1.height;
+                const canvasRatio = canvasWidth / canvasHeight;
+
+                let drawWidth, drawHeight;
+                if (canvasRatio > imgRatio) {
+                    drawWidth = canvasWidth;
+                    drawHeight = canvasWidth / imgRatio;
+                } else {
+                    drawHeight = canvasHeight;
+                    drawWidth = canvasHeight * imgRatio;
+                }
+
+                const drawX = (canvasWidth - drawWidth) / 2;
+                const drawY = (canvasHeight - drawHeight) / 2;
+
+                // Draw Frame 1 (Base)
+                context.globalAlpha = 1;
+                context.drawImage(img1, drawX, drawY, drawWidth, drawHeight);
+
+                // Draw Frame 2 (Overlay with opacity)
+                if (blendFactor > 0.01) { // Only draw if perceptible
+                    context.globalAlpha = blendFactor;
+                    context.drawImage(img2, drawX, drawY, drawWidth, drawHeight);
+                }
             }
 
             animationFrameRef.current = requestAnimationFrame(renderLoop);
@@ -103,6 +121,7 @@ const Background = ({ images, isLoaded }) => {
                 ref={canvasRef}
                 id="hero-canvas"
                 className="fixed top-0 left-0 w-full h-full object-cover z-0"
+                style={{ width: '100%', height: '100%' }}
             />
             <div className="film-grain"></div>
             <div className="scanlines"></div>
