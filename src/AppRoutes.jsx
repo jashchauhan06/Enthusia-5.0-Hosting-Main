@@ -73,14 +73,7 @@ function AppRoutes() {
                         </Suspense>
                     }
                 />
-                <Route
-                    path="/sitank-app"
-                    element={
-                        <Suspense fallback={<LoadingFallback />}>
-                            <SITankPage />
-                        </Suspense>
-                    }
-                />
+
 
                 {/* BuildBrand event page - lazy loaded */}
                 <Route
