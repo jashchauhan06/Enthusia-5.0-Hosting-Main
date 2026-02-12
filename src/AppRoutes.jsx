@@ -8,7 +8,7 @@ const CodeSprintPage = lazy(() => import('./events/codesprint'));
 const StrangerTechPage = lazy(() => import('./events/strangertech'));
 const SITankPage = lazy(() => import('./events/sitank'));
 const BuildBrandPage = lazy(() => import('./events/buildbrand'));
-const EsportsPage = lazy(() => import('./events/esports'));
+
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -85,15 +85,7 @@ function AppRoutes() {
                     }
                 />
 
-                {/* Esports event page - lazy loaded */}
-                <Route
-                    path="/esports"
-                    element={
-                        <Suspense fallback={<LoadingFallback />}>
-                            <EsportsPage />
-                        </Suspense>
-                    }
-                />
+
 
             </Routes>
         </BrowserRouter>

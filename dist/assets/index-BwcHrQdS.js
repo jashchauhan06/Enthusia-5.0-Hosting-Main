@@ -1,1 +1,0 @@
-import{j as r}from"./index-Bv5C910T.js";import{E as t}from"./EventWrapper-o3Epr6gL.js";function a(){return r.jsx(t,{src:"/esports-app/index.html",title:"ESPORTS | Gaming Tournament - ENTHUSIA 5.0",bgColor:"#0a0a0f",allowScroll:!0,buttonPosition:"original",buttonTheme:"red"})}export{a as default};

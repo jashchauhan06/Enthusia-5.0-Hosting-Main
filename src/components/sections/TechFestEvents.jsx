@@ -177,17 +177,7 @@ const TechFestEvents = forwardRef((props, ref) => {
             link: "/buildbrand",
             internal: true
         },
-        {
-            id: 6,
-            title: "ESPORTS",
-            subtitle: "",
-            icon: <Gamepad2 />,
-            desc: "GAMING TOURNAMENT",
-            borderColor: "#f97316",
-            iconColor: "#f97316",
-            link: "/esports",
-            internal: true
-        }
+
     ];
 
     return (
