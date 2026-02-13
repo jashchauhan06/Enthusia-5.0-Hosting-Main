@@ -1197,9 +1197,18 @@
     }
 
     /* LOADER - Mobile */
-    .loader-text {
-        font-size: 12px;
-        letter-spacing: 3px;
+    .loader-title {
+        font-size: clamp(1.5rem, 8vw, 2rem) !important;
+        letter-spacing: 2px !important;
+        text-align: center !important;
+        width: 100% !important;
+        padding: 0 1rem !important;
+    }
+
+    .loader-subtitle {
+        font-size: 0.7rem !important;
+        letter-spacing: 2px !important;
+        text-align: center !important;
     }
 
     .loader-bar {
