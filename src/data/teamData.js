@@ -134,7 +134,7 @@ export const teamData = [
         role: "Event Management Team",
         category: "event_management",
         image: "/images/team/Chinmay Bele.webp",
-        description: "",
+        description: "Ensuring smooth execution of event logistics.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -145,7 +145,7 @@ export const teamData = [
         role: "Event Management Team",
         category: "event_management",
         image: "/images/team/Jiya Baghel.webp",
-        description: "",
+        description: "Coordinating on-ground operations efficiently.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -156,7 +156,7 @@ export const teamData = [
         role: "Event Management Team",
         category: "event_management",
         image: "/images/team/Vidhi Bodhare.webp",
-        description: "",
+        description: "Managing event flow and participant experience.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -281,7 +281,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Sunidhi.webp",
-        description: "",
+        description: "Leading strategic sponsorship acquisitions.",
         isHighlighted: false,
         socials: {
             linkedin: "https://www.linkedin.com/in/sunidhi-haware-79184827b/",
@@ -292,7 +292,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Prathmesh.webp",
-        description: "",
+        description: "Building strategic alliances and support.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -303,7 +303,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Tanay Kothari.webp",
-        description: "",
+        description: "Connecting with key industry sponsors.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -314,7 +314,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Janhavi Warhade.webp",
-        description: "",
+        description: "Facilitating brand collaborations.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -325,7 +325,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Kunjal Pise.webp",
-        description: "",
+        description: "Securing financial support for events.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -336,7 +336,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Dhruv sadhwani.webp",
-        description: "",
+        description: "Managing sponsor relations and deliverables.",
         isHighlighted: false,
         socials: {
             linkedin: "https://www.linkedin.com/in/dhruv-sadhwani-0799a527b/",
@@ -358,7 +358,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Soumya Mehar.webp",
-        description: "",
+        description: "Expanding the festival's corporate network.",
         isHighlighted: false,
         socials: {
             linkedin: "https://www.linkedin.com/in/soumya-mehar-458115320/",
@@ -369,7 +369,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Jayesh Sharma.webp",
-        description: "",
+        description: "Driving sponsorship outreach initiatives.",
         isHighlighted: false,
         socials: {
             linkedin: "https://www.linkedin.com/in/jayesh-sharma-11861b370/",
@@ -380,7 +380,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Parthiv Abhani.webp",
-        description: "",
+        description: "Negotiating mutually beneficial partnerships.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -391,7 +391,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Dhruv Mukherjee.webp",
-        description: "",
+        description: "Attracting valuable sponsorship opportunities.",
         isHighlighted: false,
         socials: {
             linkedin: "https://www.linkedin.com/in/dhruv-mukherjee-0799a527b/",
@@ -402,7 +402,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Deveshree Ghaiwat.webp",
-        description: "",
+        description: "Fostering relationships with brand partners.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -413,7 +413,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Ishika Dubey.webp",
-        description: "",
+        description: "Coordinating sponsorship agreements.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -424,7 +424,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/.webp",
-        description: "",
+        description: "Supporting sponsorship team goals.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -435,7 +435,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Sparsh.webp",
-        description: "",
+        description: "Engaging with potential corporate sponsors.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -446,7 +446,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Priyanka Wanjari.webp",
-        description: "",
+        description: "Developing sponsorship proposals.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -457,7 +457,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Hardik Bhasme.webp",
-        description: "",
+        description: "Managing financial partnerships.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -468,7 +468,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Swanandi Thakre.webp",
-        description: "",
+        description: "Ensuring effective sponsor representation.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -479,7 +479,7 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Chaitanya Soni.webp",
-        description: "",
+        description: "Building bridges with corporate entities.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -490,20 +490,20 @@ export const teamData = [
         role: "Sponsorship Team",
         category: "sponsorship",
         image: "/images/team/Soumya Mishra.webp",
-        description: "",
+        description: "Overseeing sponsorship execution.",
         isHighlighted: false,
         socials: {
             linkedin: "",
         }
     },
-    // ==================== DESIGN TEAM (0 members) ====================
+    // ==================== DESIGN TEAM (2 members) ====================
     // Add Design members here
     {
         name: "Vaanya Bajaj",
         role: "Design Team",
         category: "design",
         image: "/images/team/Vaanya.webp",
-        description: "",
+        description: "Crafting the visual identity of the fest.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -514,20 +514,20 @@ export const teamData = [
         role: "Design Team",
         category: "design",
         image: "/images/team/Gunn.webp",
-        description: "",
+        description: "Designing creative assets and visual media.",
         isHighlighted: false,
         socials: {
             linkedin: "",
         }
     },
-    // ==================== DECOR COMMITTEE (0 members) ====================
+    // ==================== DECOR COMMITTEE (2 members) ====================
     // Add Decor Committee members here
     {
         name: "Arya Patle",
         role: "Decor Team",
         category: "decor",
         image: "/images/team/Arya Patle.webp",
-        description: "",
+        description: "Creating immersive decor and ambience.",
         isHighlighted: false,
         socials: {
             linkedin: "",
@@ -538,7 +538,7 @@ export const teamData = [
         role: "Decor Team",
         category: "decor",
         image: "/images/team/Ananya Prasad.webp",
-        description: "",
+        description: "Transforming spaces with artistic themes.",
         isHighlighted: false,
         socials: {
             linkedin: "",

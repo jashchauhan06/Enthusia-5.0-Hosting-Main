@@ -362,10 +362,44 @@ const ScrollController = () => {
 
     // Event Listeners - use refs to avoid stale closures
     useEffect(() => {
+        // Helper: check if an element or its ancestors (up to body) are scrollable
+        const findScrollableAncestor = (el) => {
+            while (el && el !== document.body && el !== document.documentElement) {
+                const style = window.getComputedStyle(el);
+                const overflowY = style.overflowY;
+                if ((overflowY === 'auto' || overflowY === 'scroll') && el.scrollHeight > el.clientHeight) {
+                    return el;
+                }
+                el = el.parentElement;
+            }
+            return null;
+        };
+
         const handleWheel = (e) => {
+            // Check if wheel event is inside a scrollable child element
+            const scrollable = findScrollableAncestor(e.target);
+            if (scrollable) {
+                const scrollTop = scrollable.scrollTop;
+                const maxScroll = scrollable.scrollHeight - scrollable.clientHeight;
+                const scrollingDown = e.deltaY > 0;
+
+                // If scrolling down and not at bottom, let child handle it
+                if (scrollingDown && scrollTop < maxScroll - 5) {
+                    scrollable.scrollBy({ top: e.deltaY, behavior: 'auto' });
+                    e.preventDefault();
+                    return;
+                }
+                // If scrolling up and not at top, let child handle it
+                if (!scrollingDown && scrollTop > 5) {
+                    scrollable.scrollBy({ top: e.deltaY, behavior: 'auto' });
+                    e.preventDefault();
+                    return;
+                }
+            }
+
             e.preventDefault();
             const now = Date.now();
-            
+
             // Block scroll during transitions or cooldown
             if (isTransitioning.current || (now - lastTransitionTime.current < TRANSITION_COOLDOWN)) {
                 scrollAccumulatorRef.current = 0;
@@ -376,7 +410,7 @@ const ScrollController = () => {
                 }
                 return;
             }
-            
+
             // Block scroll accumulation during internal section scrolling
             if (internalScrollActiveRef.current) {
                 scrollAccumulatorRef.current = 0;
@@ -396,7 +430,7 @@ const ScrollController = () => {
 
             // Determine scroll direction: 1 for down, -1 for up
             const currentDirection = e.deltaY > 0 ? 1 : -1;
-            
+
             // If direction changed from last scroll, completely reset accumulator
             if (lastScrollDirectionRef.current !== 0 && currentDirection !== lastScrollDirectionRef.current) {
                 scrollAccumulatorRef.current = 0;
@@ -404,7 +438,7 @@ const ScrollController = () => {
                     clearTimeout(scrollDebounceTimerRef.current);
                 }
             }
-            
+
             // Update last direction
             lastScrollDirectionRef.current = currentDirection;
 
@@ -415,17 +449,17 @@ const ScrollController = () => {
             if (scrollAccumulatorRef.current >= scrollThreshold) {
                 const currentIdx = activeIndexRef.current;
                 const navigationDirection = currentDirection;
-                
+
                 // Reset accumulator and direction BEFORE calling to prevent double-triggers
                 scrollAccumulatorRef.current = 0;
                 lastScrollDirectionRef.current = 0;
-                
+
                 // Clear any pending debounce timer
                 if (scrollDebounceTimerRef.current) {
                     clearTimeout(scrollDebounceTimerRef.current);
                     scrollDebounceTimerRef.current = null;
                 }
-                
+
                 // Navigate
                 dollyZoomToSection(currentIdx + navigationDirection);
                 return; // Exit early after navigation
@@ -435,7 +469,7 @@ const ScrollController = () => {
             if (scrollDebounceTimerRef.current) {
                 clearTimeout(scrollDebounceTimerRef.current);
             }
-            scrollDebounceTimerRef.current = setTimeout(() => { 
+            scrollDebounceTimerRef.current = setTimeout(() => {
                 scrollAccumulatorRef.current = 0;
                 lastScrollDirectionRef.current = 0;
                 scrollDebounceTimerRef.current = null;
@@ -474,18 +508,45 @@ const ScrollController = () => {
         // Mobile Touch Support
         let touchStartY = 0;
         let touchStartTime = 0;
-        const SWIPE_THRESHOLD = 50;
-        const SWIPE_VELOCITY_THRESHOLD = 0.3;
+        let touchScrolledInChild = false; // Track if touch scrolled a child element
+        const SWIPE_THRESHOLD = 80; // Higher threshold to avoid accidental swipes
+        const SWIPE_VELOCITY_THRESHOLD = 0.5; // Higher velocity needed for intentional swipe
 
         const handleTouchStart = (e) => {
             touchStartY = e.touches[0].clientY;
             touchStartTime = Date.now();
+            touchScrolledInChild = false;
+        };
+
+        const handleTouchMove = (e) => {
+            // Detect if the touch is scrolling a child element
+            const scrollable = findScrollableAncestor(e.target);
+            if (scrollable) {
+                const deltaY = touchStartY - e.touches[0].clientY;
+                const scrollTop = scrollable.scrollTop;
+                const maxScroll = scrollable.scrollHeight - scrollable.clientHeight;
+
+                // If swiping up (deltaY > 0) and not at bottom, child is scrolling
+                if (deltaY > 0 && scrollTop < maxScroll - 5) {
+                    touchScrolledInChild = true;
+                }
+                // If swiping down (deltaY < 0) and not at top, child is scrolling
+                if (deltaY < 0 && scrollTop > 5) {
+                    touchScrolledInChild = true;
+                }
+            }
         };
 
         const handleTouchEnd = (e) => {
             const now = Date.now();
             if (isTransitioning.current || (now - lastTransitionTime.current < TRANSITION_COOLDOWN)) return;
             if (internalScrollActiveRef.current) return; // Block during internal scroll
+
+            // If the touch scrolled a child element, don't trigger section transition
+            if (touchScrolledInChild) {
+                touchScrolledInChild = false;
+                return;
+            }
 
             const touchEndY = e.changedTouches[0].clientY;
             const deltaY = touchStartY - touchEndY;
@@ -505,12 +566,14 @@ const ScrollController = () => {
         };
 
         window.addEventListener('touchstart', handleTouchStart, { passive: true });
+        window.addEventListener('touchmove', handleTouchMove, { passive: true });
         window.addEventListener('touchend', handleTouchEnd, { passive: true });
 
         return () => {
             window.removeEventListener('wheel', handleWheel);
             window.removeEventListener('keydown', handleKey);
             window.removeEventListener('touchstart', handleTouchStart);
+            window.removeEventListener('touchmove', handleTouchMove);
             window.removeEventListener('touchend', handleTouchEnd);
         };
     }, [dollyZoomToSection]); // Now using refs, so no need to rebind on activeIndex change
