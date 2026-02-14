@@ -80,7 +80,7 @@ const Team = forwardRef((props, ref) => {
         if (showAll) {
             return filteredMembers;
         }
-        
+
         // Desktop pagination
         if (isDesktop) {
             // Ensure currentPage is within valid range
@@ -90,7 +90,7 @@ const Team = forwardRef((props, ref) => {
             const endIndex = startIndex + DESKTOP_PAGE_SIZE;
             return filteredMembers.slice(startIndex, endIndex);
         }
-        
+
         // Mobile - show all members for scrolling
         return filteredMembers;
     }, [filteredMembers, showAll, currentPage, isDesktop]);
@@ -248,7 +248,7 @@ const Team = forwardRef((props, ref) => {
 
     // Pagination handlers
     const lastPaginationTime = useRef(0);
-    
+
     const handleNextPage = (e) => {
         e?.stopPropagation(); // Prevent event bubbling
         if (canGoNext) {
@@ -314,7 +314,7 @@ const Team = forwardRef((props, ref) => {
                 const scrollHeight = container.scrollHeight;
                 const clientHeight = container.clientHeight;
                 const maxScroll = scrollHeight - clientHeight;
-                
+
                 // If there's scrollable content and we haven't reached the bottom
                 if (maxScroll > 10 && scrollTop < maxScroll - 10) {
                     container.scrollBy({ top: 150, behavior: 'smooth' });
@@ -350,7 +350,7 @@ const Team = forwardRef((props, ref) => {
             if (!isDesktop && containerRef.current) {
                 const container = containerRef.current;
                 const scrollTop = container.scrollTop;
-                
+
                 // If we're not at the top, scroll up
                 if (scrollTop > 10) {
                     container.scrollBy({ top: -150, behavior: 'smooth' });
@@ -381,7 +381,7 @@ const Team = forwardRef((props, ref) => {
         },
         isFinished: () => {
             updateScrollState();
-            
+
             // On mobile, check if container is scrolled to bottom
             if (!isDesktop && containerRef.current) {
                 const container = containerRef.current;
@@ -389,27 +389,27 @@ const Team = forwardRef((props, ref) => {
                 const scrollHeight = container.scrollHeight;
                 const clientHeight = container.clientHeight;
                 const maxScroll = scrollHeight - clientHeight;
-                
+
                 // Not finished if there's more content to scroll
                 if (maxScroll > 10 && scrollTop < maxScroll - 10) {
                     return false;
                 }
             }
-            
+
             // Not finished if expanded and can still scroll down
             if (showAllRef.current && scrollStateRef.current.canScrollDown) return false;
             return progress >= 1;
         },
         isAtStart: () => {
             updateScrollState();
-            
+
             // On mobile, check if container is at top
             if (!isDesktop && containerRef.current) {
                 const scrollTop = containerRef.current.scrollTop;
                 // Not at start if scrolled down
                 if (scrollTop > 10) return false;
             }
-            
+
             // Not at start if expanded and can still scroll up
             if (showAll && canScrollUp) return false;
 
@@ -488,7 +488,7 @@ const Team = forwardRef((props, ref) => {
                             <div className="team-grid" key={`grid-${activeFilter}-${currentPage}`}>
                                 {displayedMembers.map((member, index) => (
                                     <div
-                                        key={`${member.id}-${currentPage}`}
+                                        key={`${member.name}-${index}-${currentPage}`}
                                         className="team-grid__item"
                                         style={{
                                             animationDelay: `${index * 0.05}s`,
@@ -518,7 +518,7 @@ const Team = forwardRef((props, ref) => {
                         <div className="team-grid">
                             {displayedMembers.map((member, index) => (
                                 <div
-                                    key={member.id}
+                                    key={`${member.name}-${index}`}
                                     className="team-grid__item"
                                     style={{
                                         animationDelay: `${index * 0.05}s`,
